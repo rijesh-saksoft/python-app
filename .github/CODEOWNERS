@@ -1,0 +1,6 @@
+# CODEOWNERS: GitHub asks these people to review changes to matching files (Playbook VC-17).
+# Replace <GITHUB_REVIEWER> with a GitHub user name or team (for example @your-org/mentors).
+# With a branch protection rule that requires code-owner review, nothing merges without them.
+*                 <GITHUB_REVIEWER>
+/sql/             <GITHUB_REVIEWER>
+/.github/         <GITHUB_REVIEWER>

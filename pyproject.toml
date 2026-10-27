@@ -1,0 +1,64 @@
+# pyproject.toml: the one file that describes the project.
+#
+# WHY NO VERSION NUMBERS BELOW?
+# Written-in versions go stale. Instead of typing them by hand, let uv choose the current
+# stable releases that work together and write them into the lock file:
+#     uv lock          (creates or updates uv.lock)
+#     uv sync --locked (installs exactly what uv.lock says)
+# Commit uv.lock. The lock file is what makes builds repeatable (Playbook SET-04, DEP-02).
+#
+# To add a package later:  uv add <name>   (never "pip install" into the project, DEP-01)
+
+[project]
+name = "fde-service"                       # CHANGE: one clear name per service, kebab-case (SET-06)
+version = "0.1.0"
+description = "One sentence on what this service does."   # CHANGE
+readme = "README.md"
+# The latest stable Python. Check the Python release status page,
+# https://devguide.python.org/versions/, and keep this setting in step with it (Playbook SET-05).
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi",             # the web framework
+    "uvicorn[standard]",   # the server that runs FastAPI
+    "pydantic",            # checks the shape of data at every boundary
+    "pydantic-settings",   # reads configuration from the environment (one place only)
+    "httpx",               # outbound HTTP calls (always set a timeout)
+    "jinja2",              # HTML templates for the small web page
+    "python-multipart",    # needed by FastAPI for HTML form posts
+]
+
+[dependency-groups]
+# Tools used while developing and in CI, not shipped in the container.
+dev = [
+    "pytest",
+    "pytest-cov",          # coverage report (a signal, not a goal: TST-06)
+    "ruff",                # formatter and linter in one tool
+    "pyright",             # type checker (you may use mypy instead)
+    "bandit",              # looks for risky Python patterns
+    "pip-audit",           # checks dependencies for known vulnerabilities
+    "pre-commit",          # runs checks before each commit
+]
+
+# ---------------------------------------------------------------- tool settings
+[tool.ruff]
+line-length = 99           # house default (PY-01)
+
+[tool.ruff.lint]
+# E/F/W = basic errors, I = import order, N = names, UP = modern syntax, B = bug patterns,
+# S = security, C4 = comprehensions, C90 = complexity, SIM = simplify, PT = pytest style,
+# PTH = pathlib, ASYNC = async mistakes, LOG = logging mistakes, T20 = no print, RUF = extras
+select = ["E", "F", "W", "I", "N", "UP", "B", "S", "C4", "C90", "SIM", "PT", "PTH",
+          "ASYNC", "LOG", "T20", "RUF"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10        # keep functions small (PY-14)
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]      # assert is how pytest checks things
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+
+[tool.pyright]
+typeCheckingMode = "standard"   # move to "strict" once the team is comfortable

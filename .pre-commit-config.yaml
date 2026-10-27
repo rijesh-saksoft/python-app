@@ -1,0 +1,16 @@
+# .pre-commit-config.yaml: checks that run on your machine before each commit (Playbook VC-10).
+# Set up once:   uv run pre-commit install
+# Run on demand: uv run pre-commit run --all-files
+#
+# Replace the <PLACEHOLDERS> with the newest released tag of each project
+# (see starter_kit/PLACEHOLDERS.md: open the repository's Releases page, copy the tag).
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: <RUFF_PRECOMMIT_TAG>
+    hooks:
+      - id: ruff-check      # lint
+      - id: ruff-format     # format
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: <GITLEAKS_TAG>
+    hooks:
+      - id: gitleaks        # blocks commits that contain a secret (CFG-03)

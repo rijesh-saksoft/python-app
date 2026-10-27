@@ -1,0 +1,50 @@
+# CI: a robot runs these checks on every pull request (Playbook VC-04): format and lint, types,
+# tests, security scans (code, dependencies and secrets) and the image build.
+# Merging is allowed only when all of them pass.
+#
+# Replace the <PLACEHOLDERS> before first use (starter_kit/PLACEHOLDERS.md):
+#   actions: the full 40-character commit SHA of the current release of each action. Pinning to a
+#            SHA (not a tag) stops a moved tag from slipping in other code (DEP-10, VC-05). Open the
+#            action's repository, Releases, click the current release, copy the full commit SHA.
+#            Keep the release tag as a comment so humans can read it.
+#   images:  the Gitleaks release tag and its image digest, pinned like every other image (CTR-03).
+name: ci
+on: [pull_request]
+
+permissions:
+  contents: read            # least privilege for the token the workflow receives
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
+      - uses: astral-sh/setup-uv@<ACTIONS_SETUP_UV_SHA>    # release tag of this commit
+      - run: uv sync --locked            # install exactly what uv.lock says
+      - run: uv run ruff format --check  # formatting
+      - run: uv run ruff check           # lint
+      - run: uv run pyright              # types
+      - run: uv run pytest               # tests
+      - run: uv run bandit -r app        # risky code patterns
+      - run: uv run pip-audit            # known vulnerable dependencies
+
+  secret-scan:
+    # Gitleaks reads the whole Git history, not only the files of this pull request (DEP-06).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
+        with:
+          fetch-depth: 0                 # fetch every commit so the scan sees the full history
+      - run: >-
+          docker run --rm -v "${{ github.workspace }}:/repo"
+          ghcr.io/gitleaks/gitleaks:<GITLEAKS_TAG>@sha256:<GITLEAKS_IMAGE_DIGEST>
+          git --redact --verbose /repo
+
+  image:
+    # Build the container image from the Dockerfile. A pull request that breaks the build cannot merge.
+    # Nothing is pushed anywhere: the image only proves that it builds.
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
+      - run: docker build --tag "fde-service:${{ github.sha }}" .

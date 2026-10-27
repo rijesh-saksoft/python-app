@@ -1,0 +1,17 @@
+# Caddyfile: tells the Caddy reverse proxy what to do.
+# A reverse proxy sits in front of the app: it gets the HTTPS certificate, speaks HTTPS to
+# the world, and forwards plain requests to the app (CTR-11).
+#
+# Replace <DOMAIN_NAME> with the real name (for example assistant.example.com).
+# For a local trial without a public name, use:  localhost
+<DOMAIN_NAME> {
+    # Send everything to the app container (the name "app" comes from docker-compose.yml).
+    reverse_proxy app:8000
+
+    # Basic safety headers. Tighten them to fit the app (SEC-04).
+    header {
+        Strict-Transport-Security "max-age=31536000"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "no-referrer"
+    }
+}

@@ -1,0 +1,15 @@
+# .dockerignore: files that must NOT be copied into the image (Playbook CTR-04).
+# Secrets and local clutter stay out of the image layers.
+.env
+app.env
+.git
+.gitignore
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+tests
+docs
+*.md

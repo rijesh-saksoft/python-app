@@ -1,0 +1,68 @@
+# docker-compose.yml: runs the whole stack (database, app, HTTPS proxy) with one command:
+#     docker compose up -d --build
+# Useful companions:  docker compose ps | logs -f | config | down
+# (Careful: "docker compose down -v" also deletes the data volume. Playbook CLI-09.)
+#
+# BEFORE FIRST USE replace the <PLACEHOLDERS> (see starter_kit/PLACEHOLDERS.md):
+#   <POSTGRES_IMAGE_TAG> <POSTGRES_IMAGE_DIGEST> <CADDY_IMAGE_TAG> <CADDY_IMAGE_DIGEST> <APP_IMAGE_TAG>
+
+services:
+  db:
+    image: postgres:<POSTGRES_IMAGE_TAG>@sha256:<POSTGRES_IMAGE_DIGEST>
+    restart: unless-stopped
+    # Admin credentials come from `.env` (read only by Compose). The app never gets them (CFG-10).
+    environment:
+      POSTGRES_USER: ${POSTGRES_ADMIN_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_ADMIN_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      # Named volume: data survives container re-creation.
+      # CHECK the image page for the data path of your Postgres version (see PLACEHOLDERS.md).
+      - db_data:<POSTGRES_DATA_PATH>
+      # This file runs once, when the database is created for the first time (DB-03).
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    # No "ports:" on purpose. Only containers on this Compose network can reach the database (DB-12).
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }   # stop logs from filling the disk (LOG-07)
+    mem_limit: 2g
+    cpus: 2
+
+  app:
+    build: .
+    image: fde-service:<APP_IMAGE_TAG>        # a real version, never "latest" (CTR-09)
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8081:8000"                  # reachable only through the proxy below
+    env_file: [app.env]                        # the app's own settings only
+    depends_on:
+      db:
+        condition: service_healthy             # wait until the database is really ready
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]                            # give the container no special Linux powers
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }
+    mem_limit: 1g
+    cpus: 1
+
+  proxy:
+    image: caddy:<CADDY_IMAGE_TAG>@sha256:<CADDY_IMAGE_DIGEST>
+    restart: unless-stopped
+    ports:
+      - "80:80"                                # Caddy gets the certificate on port 80
+      - "443:443"                              # and serves HTTPS on port 443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data                       # keeps the certificates
+    depends_on: [app]
+
+volumes:
+  db_data:
+  caddy_data:
