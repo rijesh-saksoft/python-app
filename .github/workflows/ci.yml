@@ -12,32 +12,32 @@ name: ci
 on: [pull_request]
 
 permissions:
-  contents: read            # least privilege for the token the workflow receives
+  contents: read # least privilege for the token the workflow receives
 
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
-      - uses: astral-sh/setup-uv@<ACTIONS_SETUP_UV_SHA>    # release tag of this commit
-      - run: uv sync --locked            # install exactly what uv.lock says
-      - run: uv run ruff format --check  # formatting
-      - run: uv run ruff check           # lint
-      - run: uv run pyright              # types
-      - run: uv run pytest               # tests
-      - run: uv run bandit -r app        # risky code patterns
-      - run: uv run pip-audit            # known vulnerable dependencies
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # release tag of this commit
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # release tag of this commit
+      - run: uv sync --locked # install exactly what uv.lock says
+      - run: uv run ruff format --check # formatting
+      - run: uv run ruff check # lint
+      - run: uv run pyright # types
+      - run: uv run pytest # tests
+      - run: uv run bandit -r app # risky code patterns
+      - run: uv run pip-audit # known vulnerable dependencies
 
   secret-scan:
     # Gitleaks reads the whole Git history, not only the files of this pull request (DEP-06).
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # release tag of this commit
         with:
-          fetch-depth: 0                 # fetch every commit so the scan sees the full history
+          fetch-depth: 0 # fetch every commit so the scan sees the full history
       - run: >-
           docker run --rm -v "${{ github.workspace }}:/repo"
-          ghcr.io/gitleaks/gitleaks:<GITLEAKS_TAG>@sha256:<GITLEAKS_IMAGE_DIGEST>
+          ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
           git --redact --verbose /repo
 
   image:
@@ -46,5 +46,5 @@ jobs:
     needs: checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # release tag of this commit
       - run: docker build --tag "fde-service:${{ github.sha }}" .
