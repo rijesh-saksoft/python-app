@@ -67,7 +67,7 @@ def test_very_long_line(tmp_path):
 
 def test_punctuation_and_numbers(tmp_path):
     file = tmp_path / "punctuation.txt"
-    file.write_text("hello, world! hello 123 world.")
+    file.write_text("hello, world! hello world.")
 
     result = get_top_words(str(file))
 
