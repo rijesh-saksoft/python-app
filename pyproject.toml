@@ -10,9 +10,9 @@
 # To add a package later:  uv add <name>   (never "pip install" into the project, DEP-01)
 
 [project]
-name = "fde-service"                       # CHANGE: one clear name per service, kebab-case (SET-06)
+name = "wordstat"                       # CHANGE: one clear name per service, kebab-case (SET-06)
 version = "0.1.0"
-description = "One sentence on what this service does."   # CHANGE
+description = "Word stat count."   # CHANGE
 readme = "README.md"
 # The latest stable Python. Check the Python release status page,
 # https://devguide.python.org/versions/, and keep this setting in step with it (Playbook SET-05).
@@ -58,6 +58,7 @@ max-complexity = 10        # keep functions small (PY-14)
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 addopts = "-ra --strict-markers --strict-config"
 
 [tool.pyright]
