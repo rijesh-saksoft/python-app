@@ -1,4 +1,5 @@
 """Configuration tests: secrets must never show up when settings are printed (CFG-09)."""
+
 from pydantic import SecretStr
 
 from app.config import Settings
@@ -7,8 +8,7 @@ from app.config import Settings
 def test_settings_repr_hides_secret_values():
     # These are fake values made up for the test, so the S106 warning is expected here.
     settings = Settings(
-        postgres_password=SecretStr("super-secret-value"),
-        llm_api_key=SecretStr("another-secret")
+        postgres_password=SecretStr("super-secret-value"), llm_api_key=SecretStr("another-secret")
     )
     text = repr(settings)
     assert "super-secret-value" not in text
