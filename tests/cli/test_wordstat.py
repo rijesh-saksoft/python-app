@@ -1,6 +1,6 @@
 import pytest
 
-from wordstat import get_top_words
+from app.cli.wordstat import get_top_words
 
 
 def test_basic_word_count(tmp_path):
@@ -53,11 +53,8 @@ def test_unicode_words(tmp_path):
 
     result = get_top_words(str(file))
 
-    assert result == [
-        ("café", 2),
-        ("naïve", 1),
-        ("résumé", 1)
-    ]
+    assert result == [("café", 2), ("naïve", 1), ("résumé", 1)]
+
 
 def test_very_long_line(tmp_path):
     file = tmp_path / "long.txt"
