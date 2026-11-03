@@ -1,0 +1,472 @@
+2026-03-02T08:00:04 INFO search query ok results=802
+2026-03-02T08:00:40 INFO api POST /orders 201 385ms
+2026-03-02T08:00:46 INFO api POST /orders 201 625ms
+2026-03-02T08:01:15 WARNING cache miss key=item:105
+2026-03-02T08:01:34 INFO api POST /orders 201 170ms
+2026-03-02T08:01:41 INFO api POST /orders 201 271ms
+2026-03-02T08:02:20 INFO billing invoice 138 created
+2026-03-02T08:02:24 ERROR billing payment gateway timeout
+2026-03-02T08:02:39 INFO auth login ok user=u101
+2026-03-02T08:03:00 INFO api POST /orders 201 2004ms
+2026-03-02T08:03:33 INFO billing invoice 340 created
+2026-03-02T08:04:00 INFO api GET /items/226 200 45ms
+2026-03-02T08:04:21 INFO cache hit key=item:900
+2026-03-02T08:04:34 INFO api GET /items/845 200 1373ms
+2026-03-02T08:04:55 INFO api GET /items/556 200 1335ms
+2026-03-02T08:05:31 INFO api POST /orders 201 1167ms
+2026-03-02T08:05:44 DEBUG api POST /orders 201 1898ms
+2026-03-02T08:06:21 INFO billing invoice 867 created
+2026-03-02T08:06:31 INFO auth login ok user=u121
+2026-03-02T08:06:52 WARNING api slow response 298ms for GET /search
+2026-03-02T08:06:55 DEBUG auth login ok user=u115
+2026-03-02T08:07:18 INFO billing invoice 19 created
+2026-03-02T08:07:39 INFO cache hit key=item:689
+2026-03-02T08:07:48 INFO api GET /items/412 200 515ms
+2026-03-02T08:08:17 INFO api GET /items/609 200 1853ms
+2026-03-02T08:08:56 INFO api POST /orders 201 1618ms
+2026-03-02T08:09:32 INFO api GET /items/448 200 2095ms
+2026-03-02T08:10:08 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:10:15 DEBUG search query ok results=60
+2026-03-02T08:10:38 INFO api GET /items/489 200 609ms
+2026-03-02T08:10:47 WARNING cache miss key=item:456
+2026-03-02T08:11:12 INFO billing invoice 6 created
+2026-03-02T08:11:23 DEBUG search query ok results=385
+2026-03-02T08:11:37 ERROR db connection refused to postgres:5432
+2026-03-02T08:12:06 INFO cache hit key=item:863
+2026-03-02T08:12:29 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:13:09 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:13:40 DEBUG api GET /items/599 200 268ms
+2026-03-02T08:13:59 INFO api POST /orders 201 302ms
+2026-03-02T08:14:07 WARNING api slow response 1588ms for GET /search
+2026-03-02T08:14:41 INFO api POST /orders 201 1571ms
+2026-03-02T08:14:51 INFO api GET /items/781 200 785ms
+2026-03-02T08:15:22 INFO billing invoice 167 created
+2026-03-02T08:15:25 INFO search query ok results=262
+2026-03-02T08:15:50 INFO search query ok results=187
+2026-03-02T08:15:55 DEBUG billing invoice 482 created
+2026-03-02T08:16:32 WARNING cache miss key=item:689
+2026-03-02T08:16:43 DEBUG search query ok results=310
+2026-03-02T11:02
+2026-03-02T08:16:48 INFO auth login ok user=u104
+2026-03-02T08:17:09 INFO auth login ok user=u101
+2026-03-02T08:17:48 INFO search query ok results=365
+2026-03-02T08:17:52 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:18:14 INFO auth login ok user=u124
+2026-03-02T08:18:48 INFO billing invoice 319 created
+2026-03-02T08:18:53 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:19:29 INFO billing invoice 867 created
+2026-03-02T08:19:40 INFO billing invoice 867 created
+2026-03-02T08:20:19 INFO auth login ok user=u119
+2026-03-02T08:20:32 INFO api GET /items/719 200 1830ms
+2026-03-02T08:20:36 INFO cache hit key=item:833
+2026-03-02T08:20:38 INFO billing invoice 633 created
+2026-03-02T08:20:49 WARNING api slow response 1281ms for GET /search
+2026-03-02T08:21:00 INFO search query ok results=510
+2026-03-02T08:21:40 DEBUG auth login ok user=u111
+2026-03-02T08:21:49 INFO auth login ok user=u121
+2026-03-02T08:22:09 INFO search query ok results=164
+2026-03-02T08:22:40 INFO search query ok results=166
+2026-03-02T08:22:42 INFO search query ok results=202
+2026-03-02T08:23:10 INFO api GET /items/547 200 279ms
+2026-03-02T08:23:31 INFO search query ok results=462
+2026-03-02T08:23:56 INFO auth login ok user=u111
+2026-03-02T08:24:18 DEBUG api GET /items/265 200 344ms
+2026-03-02T08:24:22 INFO search query ok results=753
+2026-03-02T08:25:00 DEBUG auth login ok user=u121
+2026-03-02T08:25:38 WARNING api slow response 847ms for GET /search
+2026-03-02T08:25:52 INFO api POST /orders 201 150ms
+2026-03-02T08:26:27 DEBUG search query ok results=56
+2026-03-02T08:26:40 WARNING api slow response 2038ms for GET /search
+2026-03-02T08:26:58 INFO api GET /items/66 200 996ms
+2026-03-02T08:27:18 INFO auth login ok user=u125
+2026-03-02T08:27:42 INFO auth login ok user=u117
+2026-03-02T08:27:47 INFO auth login ok user=u100
+2026-03-02T08:28:27 DEBUG api GET /items/141 200 1188ms
+2026-03-02T08:28:53 INFO search query ok results=900
+2026-03-02T08:29:28 DEBUG billing invoice 663 created
+2026-03-02T08:30:08 INFO auth login ok user=u113
+2026-03-02T08:30:26 INFO cache hit key=item:324
+2026-03-02T08:30:41 INFO search query ok results=342
+2026-03-02T08:30:42 INFO api POST /orders 201 444ms
+2026-03-02T10:15:07 LOUD api shouting is not a level
+2026-03-02T08:30:52 INFO search query ok results=312
+2026-03-02T08:31:03 INFO auth login ok user=u119
+2026-03-02T08:31:31 WARNING cache miss key=item:277
+2026-03-02T08:31:45 INFO search query ok results=464
+2026-03-02T08:31:52 INFO auth login ok user=u112
+2026-03-02T08:32:15 INFO api POST /orders 201 2157ms
+2026-03-02T08:32:18 INFO cache hit key=item:419
+2026-03-02T08:32:58 DEBUG auth login ok user=u113
+2026-03-02T08:33:18 INFO billing invoice 531 created
+2026-03-02T08:33:43 DEBUG api GET /items/114 200 1084ms
+2026-03-02T08:34:04 INFO billing invoice 675 created
+2026-03-02T08:34:27 INFO cache hit key=item:801
+2026-03-02T08:34:37 INFO billing invoice 474 created
+2026-03-02T08:35:07 INFO api GET /items/88 200 1112ms
+2026-03-02T08:35:23 INFO search query ok results=690
+2026-03-02T08:35:28 INFO auth login ok user=u135
+2026-03-02T08:35:54 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:36:19 INFO billing invoice 614 created
+2026-03-02T08:36:25 ERROR auth invalid token for user=u122
+2026-03-02T08:36:32 INFO auth login ok user=u116
+2026-03-02T08:37:04 INFO auth login ok user=u104
+2026-03-02T08:37:42 INFO cache hit key=item:224
+2026-03-02T08:37:59 INFO api GET /items/750 200 8ms
+2026-03-02T08:38:23 INFO auth login ok user=u109
+2026-03-02T08:38:30 DEBUG search query ok results=54
+2026-03-02T08:38:39 INFO api GET /items/274 200 1534ms
+2026-03-02T08:39:06 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:39:19 INFO api POST /orders 201 1532ms
+2026-03-02T08:39:44 INFO api GET /items/70 200 2181ms
+2026-03-02T08:40:01 INFO api GET /items/303 200 1995ms
+2026-03-02T08:40:40 INFO api POST /orders 201 334ms
+2026-03-02T08:41:06 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:41:39 WARNING db connection pool at 90 percent
+2026-03-02T08:42:04 INFO cache hit key=item:223
+2026-03-02T08:42:30 INFO api POST /orders 201 1636ms
+2026-03-02T08:42:39 INFO api GET /items/712 200 1554ms
+2026-03-02T08:43:10 INFO billing invoice 160 created
+2026-03-02T08:43:45 INFO billing invoice 846 created
+2026-03-02T08:44:21 INFO api POST /orders 201 732ms
+2026-03-02T08:45:01 DEBUG api GET /items/231 200 765ms
+2026-03-02T08:45:25 INFO search query ok results=665
+2026-03-02T08:45:33 INFO billing invoice 248 created
+2026-03-02T08:46:02 WARNING api slow response 1436ms for GET /search
+2026-03-02T08:46:27 INFO auth login ok user=u115
+2026-03-02T08:47:01 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:47:18 WARNING cache miss key=item:744
+2026-03-02T08:47:34 INFO billing invoice 789 created
+2026-03-02T08:47:59 INFO billing invoice 97 created
+2026-03-02T08:48:13 WARNING api slow response 1373ms for GET /search
+2026-03-02T08:48:28 INFO cache hit key=item:307
+2026-03-02T08:49:00 INFO billing invoice 812 created
+2026-03-02T08:49:26 DEBUG api POST /orders 201 196ms
+2026-03-02T08:49:56 INFO api GET /items/523 200 1779ms
+2026-03-02T08:50:17 ERROR auth invalid token for user=u132
+2026-03-02T08:50:18 INFO billing invoice 15 created
+2026-03-02T08:50:29 INFO auth login ok user=u115
+2026-03-02T08:50:30 INFO auth login ok user=u128
+2026-03-02T08:51:04 DEBUG auth login ok user=u129
+   
+2026-03-02T08:51:07 ERROR billing payment gateway timeout
+2026-03-02T08:51:13 DEBUG api GET /items/147 200 602ms
+2026-03-02T08:51:20 INFO cache hit key=item:81
+2026-03-02T08:51:30 DEBUG search query ok results=177
+2026-03-02T08:51:44 INFO billing invoice 185 created
+2026-03-02T08:51:55 INFO search query ok results=436
+2026-03-02T08:52:26 WARNING api slow response 351ms for GET /search
+2026-03-02T08:52:32 INFO cache hit key=item:54
+2026-03-02T08:52:53 INFO auth login ok user=u112
+2026-03-02T08:53:24 WARNING cache miss key=item:116
+2026-03-02T08:53:44 INFO auth login ok user=u101
+2026-03-02T08:54:13 INFO api GET /items/852 200 2297ms
+2026-03-02T08:54:25 DEBUG cache hit key=item:424
+2026-03-02T08:54:48 WARNING api slow response 1892ms for GET /search
+2026-03-02T08:55:27 INFO api GET /items/94 200 1611ms
+2026-03-02T08:55:46 INFO auth login ok user=u135
+2026-03-02T08:56:25 INFO api POST /orders 201 773ms
+2026-03-02T08:56:53 INFO api GET /items/843 200 1469ms
+2026-03-02T11:30:15 INFO api message with unicode: café, 北京
+2026-03-02T08:57:04 DEBUG billing invoice 658 created
+2026-03-02T08:57:13 INFO search query ok results=603
+2026-03-02T08:57:21 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T08:57:57 INFO search query ok results=122
+2026-03-02T08:58:06 INFO api GET /items/726 200 34ms
+2026-03-02T08:58:34 INFO api GET /items/345 200 912ms
+2026-03-02T08:58:43 INFO api POST /orders 201 451ms
+2026-03-02T08:58:57 INFO cache hit key=item:745
+2026-03-02T08:59:08 INFO api POST /orders 201 2332ms
+2026-03-02T08:59:23 ERROR auth invalid token for user=u118
+2026-03-02T08:59:40 INFO cache hit key=item:174
+2026-03-02T09:00:15 WARNING api slow response 1814ms for GET /search
+2026-03-02T09:00:52 INFO search query ok results=371
+2026-03-02T09:01:09 INFO cache hit key=item:830
+2026-03-02T09:01:33 INFO cache hit key=item:786
+INFO api GET /items/4 200 12ms
+2026-03-02T09:01:46 INFO api POST /orders 201 1146ms
+2026-03-02T09:02:22 INFO billing invoice 637 created
+2026-03-02T09:02:37 DEBUG api GET /items/563 200 1514ms
+2026-03-02T09:03:08 INFO api GET /items/323 200 1547ms
+2026-03-02T09:03:42 INFO cache hit key=item:60
+2026-03-02T09:04:08 DEBUG auth login ok user=u135
+2026-03-02T09:04:13 INFO api GET /items/519 200 1437ms
+2026-03-02T09:04:37 INFO search query ok results=586
+2026-03-02T09:04:51 WARNING api slow response 186ms for GET /search
+2026-03-02T09:05:20 INFO auth login ok user=u129
+2026-03-02T09:05:24 DEBUG api POST /orders 201 2235ms
+2026-03-02T09:05:38 INFO api GET /items/451 200 1624ms
+2026-03-02T09:05:57 WARNING api slow response 1035ms for GET /search
+2026-03-02T09:06:00 INFO cache hit key=item:629
+2026-03-02T09:06:25 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T09:06:52 WARNING api slow response 131ms for GET /search
+2026-03-02T09:07:22 INFO auth login ok user=u117
+2026-03-02T09:07:28 ERROR db connection refused to postgres:5432
+2026-03-02T09:07:42 DEBUG cache hit key=item:632
+2026-03-02T09:07:48 INFO cache hit key=item:452
+2026-03-02T09:08:23 INFO cache hit key=item:895
+2026-03-02T09:08:52 ERROR billing payment gateway timeout
+2026-03-02T09:08:56 INFO search query ok results=215
+2026-03-02T09:09:11 WARNING db connection pool at 90 percent
+2026-03-02T09:09:42 DEBUG cache hit key=item:782
+2026-03-02T09:09:58 INFO billing invoice 518 created
+2026-03-02T09:10:35 INFO auth login ok user=u103
+2026-03-02T09:10:39 INFO api POST /orders 201 2078ms
+2026-03-02T09:11:00 DEBUG cache hit key=item:519
+2026-03-02T09:11:31 INFO api POST /orders 201 771ms
+2026-03-02T09:11:59 DEBUG search query ok results=148
+2026-03-02T09:12:15 INFO auth login ok user=u117
+  File "app.py", line 42, in handler
+2026-03-02T09:12:49 DEBUG api POST /orders 201 1849ms
+2026-03-02T09:13:28 WARNING db connection pool at 90 percent
+2026-03-02T09:13:55 INFO api POST /orders 201 150ms
+2026-03-02T09:14:24 DEBUG api GET /items/502 200 1543ms
+2026-03-02T09:14:39 INFO cache hit key=item:503
+  binary junk 
+2026-03-02T09:14:46 INFO cache hit key=item:383
+2026-03-02T09:15:06 INFO api GET /items/323 200 1979ms
+2026-03-02T09:15:10 ERROR db connection refused to postgres:5432
+2026-03-02T09:15:34 INFO billing invoice 742 created
+2026-03-02T09:15:50 INFO auth login ok user=u119
+2026-03-02T09:16:02 DEBUG cache hit key=item:194
+2026-03-02T09:16:25 INFO search query ok results=402
+2026-03-02T09:16:41 INFO auth login ok user=u125
+2026-03-02T09:16:46 INFO auth login ok user=u124
+2026-03-02T09:17:15 INFO cache hit key=item:565
+2026-03-02T09:17:54 INFO search query ok results=373
+2026-03-02T09:17:58 DEBUG api POST /orders 201 220ms
+2026-03-02T09:18:32 INFO billing invoice 118 created
+2026-03-02T09:18:48 INFO cache hit key=item:173
+2026-03-02T09:18:54 INFO api POST /orders 201 1305ms
+2026-03-02T09:18:59 WARNING api slow response 1863ms for GET /search
+2026-03-02T09:19:30 INFO api GET /items/421 200 1497ms
+2026-03-02T09:19:55 DEBUG api GET /items/30 200 1737ms
+2026-03-02T09:19:59 INFO cache hit key=item:552
+2026-03-02T09:20:06 INFO billing invoice 354 created
+2026-03-02T09:20:27 INFO api GET /items/420 200 2160ms
+2026-03-02T09:21:03 INFO cache hit key=item:620
+2026-03-02T09:21:40 WARNING db connection pool at 90 percent
+2026-03-02T09:21:41 DEBUG auth login ok user=u138
+2026-03-02T09:22:03 DEBUG api POST /orders 201 493ms
+2026-03-02T09:61:00 INFO api GET /items/4 200 12ms
+2026-03-02T09:22:13 INFO search query ok results=36
+2026-03-02T09:22:32 DEBUG auth login ok user=u111
+2026-03-02T09:23:08 INFO api GET /items/282 200 114ms
+2026-03-02T09:23:39 DEBUG cache hit key=item:657
+2026-03-02T09:24:10 INFO api GET /items/460 200 1397ms
+2026-03-02T09:24:22 ERROR auth invalid token for user=u103
+2026-03-02T09:24:40 INFO search query ok results=670
+2026-03-02T09:24:49 INFO billing invoice 241 created
+2026-03-02T09:25:16 INFO api POST /orders 201 1410ms
+2026-03-02T09:25:49 DEBUG search query ok results=19
+Traceback (most recent call last):
+2026-03-02T09:26:23 INFO billing invoice 315 created
+2026-03-02T09:26:58 ERROR billing payment gateway timeout
+2026-03-02T09:27:00 DEBUG auth login ok user=u106
+2026-03-02T09:27:39 ERROR billing payment gateway timeout
+2026-03-02T09:28:15 INFO auth login ok user=u118
+2026-03-02T09:28:42 DEBUG cache hit key=item:243
+2026-03-02T09:29:18 INFO auth login ok user=u114
+2026-03-02T09:29:47 INFO cache hit key=item:676
+2026-03-02T09:29:49 INFO api GET /items/799 200 625ms
+2026-03-02T09:29:52 INFO api POST /orders 201 1627ms
+2026-03-02T09:30:10 INFO billing invoice 854 created
+2026-03-02T09:30:44 WARNING api slow response 1353ms for GET /search
+2026-03-02T09:30:52 DEBUG api POST /orders 201 2305ms
+2026-03-02T09:31:26 INFO api GET /items/369 200 561ms
+2026-03-02T09:31:58 WARNING api slow response 1603ms for GET /search
+2026-03-02T09:32:30 INFO api POST /orders 201 480ms
+2026-03-02T09:32:35 DEBUG auth login ok user=u140
+2026-03-02T09:33:05 INFO billing invoice 420 created
+2026-03-02T09:33:40 INFO search query ok results=460
+2026-03-02T09:34:18 INFO auth login ok user=u120
+2026-03-02T09:34:50 INFO auth login ok user=u103
+2026-03-02T09:35:20 WARNING api slow response 1746ms for GET /search
+2026-03-02T09:35:53 INFO search query ok results=741
+2026-03-02T09:36:09 ERROR billing payment gateway timeout
+2026-03-02T09:36:41 INFO api GET /items/895 200 199ms
+2026-03-02T09:36:55 DEBUG billing invoice 880 created
+2026-03-02T09:37:19 WARNING db connection pool at 90 percent
+2026-03-02T09:37:58 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T09:38:12 INFO billing invoice 179 created
+2026-03-02T09:38:38 INFO search query ok results=617
+2026-03-02T09:38:59 WARNING cache miss key=item:549
+2026-03-02T09:39:11 INFO billing invoice 239 created
+2026-03-02T09:39:19 DEBUG billing invoice 312 created
+2026-03-02T09:39:37 INFO billing invoice 854 created
+2026-03-02T09:40:15 INFO billing invoice 352 created
+2026-03-02T09:40:17 DEBUG billing invoice 102 created
+2026-03-02T09:40:47 INFO cache hit key=item:76
+2026-03-02T09:40:51 INFO cache hit key=item:282
+2026-03-02T09:40:52 INFO api POST /orders 201 2383ms
+2026-03-02T09:40:59 INFO api GET /items/460 200 797ms
+2026-03-02T09:41:30 INFO api POST /orders 201 297ms
+2026-03-02T10:15:09 ERROR
+2026-03-02T09:41:54 INFO api POST /orders 201 258ms
+2026-03-02T09:42:05 WARNING db connection pool at 90 percent
+2026-03-02T09:42:07 INFO search query ok results=284
+2026-03-02T09:42:40 ERROR billing payment gateway timeout
+2026-03-02T09:42:57 DEBUG auth login ok user=u140
+2026-03-02T09:43:30 WARNING db connection pool at 90 percent
+2026-03-02T09:43:42 INFO search query ok results=612
+2026-03-02T09:44:00 INFO billing invoice 694 created
+2026-03-02T09:44:28 ERROR billing payment gateway timeout
+2026-03-02T09:45:00 INFO api POST /orders 201 380ms
+2026-03-02T09:45:31 INFO billing invoice 206 created
+2026-03-02T09:46:09 WARNING db connection pool at 90 percent
+2026-03-02T09:46:12 DEBUG cache hit key=item:638
+2026-03-02T09:46:15 INFO api POST /orders 201 1194ms
+2026-03-02T09:46:27 WARNING api slow response 461ms for GET /search
+2026-03-02T09:47:04 INFO api GET /items/256 200 729ms
+2026-03-02T09:47:16 INFO cache hit key=item:329
+2026-03-02T09:47:44 DEBUG api POST /orders 201 2358ms
+2026-03-02T09:48:04 DEBUG search query ok results=178
+2026-03-02T09:48:25 INFO cache hit key=item:247
+2026-03-02T09:48:38 WARNING db connection pool at 90 percent
+2026-03-02T09:49:06 INFO api POST /orders 201 2118ms
+2026-03-02T09:49:45 WARNING db connection pool at 90 percent
+2026-03-02T09:50:18 ERROR db connection refused to postgres:5432
+2026-03-02T09:50:37 INFO auth login ok user=u128
+2026-03-02T09:51:03 INFO search query ok results=870
+2026-03-02T09:51:43 INFO auth login ok user=u122
+2026-03-02T09:52:19 INFO api GET /items/265 200 851ms
+2026-03-02T09:52:33 INFO search query ok results=316
+2026-03-02T09:52:52 INFO api GET /items/542 200 1602ms
+2026-03-02T09:53:04 INFO search query ok results=473
+2026-03-02T09:53:14 WARNING db connection pool at 90 percent
+2026-03-02T09:53:26 INFO cache hit key=item:715
+2026-03-02T09:53:30 INFO search query ok results=128
+2026-03-02T09:53:43 INFO cache hit key=item:275
+2026-03-02T09:53:51 INFO api POST /orders 201 85ms
+2026-03-02T09:54:23 INFO search query ok results=185
+2026-03-02T09:54:57 INFO search query ok results=34
+2026-03-02T09:55:14 INFO auth login ok user=u135
+2026-03-02T09:55:38 INFO api POST /orders 201 869ms
+2026-03-02T09:56:08 INFO cache hit key=item:595
+2026-03-02T09:56:28 INFO search query ok results=288
+2026-03-02T09:56:58 ERROR auth invalid token for user=u139
+2026-03-02T09:57:29 INFO api GET /items/57 200 755ms
+2026-03-02T09:57:52 WARNING db connection pool at 90 percent
+2026-03-02T09:58:24 INFO billing invoice 407 created
+2026-03-02T09:58:37 INFO api GET /items/218 200 535ms
+2026-03-02T09:58:58 DEBUG cache hit key=item:130
+2026-03-02T09:59:08 INFO api GET /items/31 200 2000ms
+2026-03-02T09:59:47 WARNING api slow response 547ms for GET /search
+2026-03-02T09:59:56 INFO cache hit key=item:176
+2026-03-02T10:00:31 INFO billing invoice 198 created
+2026-03-02T10:01:07 INFO cache hit key=item:90
+2026-03-02T10:01:29 DEBUG search query ok results=531
+2026-03-02T10:01:47 INFO api GET /items/797 200 2245ms
+2026-03-02T10:01:48 INFO search query ok results=19
+2026-03-02T10:02:27 WARNING cache miss key=item:302
+2026-03-02T10:02:51 INFO api GET /items/805 200 2086ms
+2026-03-02T10:03:21 INFO auth login ok user=u120
+2026-03-02T10:04:00 INFO api POST /orders 201 2342ms
+2026-03-02T10:04:35 INFO api POST /orders 201 996ms
+2026-03-02T10:04:44 INFO billing invoice 464 created
+2026-03-02T10:05:03 DEBUG search query ok results=632
+2026-03-02T10:05:05 INFO billing invoice 498 created
+2026-03-02T10:05:30 ERROR api unhandled exception KeyError: 'customer_id'
+2026-03-02T10:05:47 INFO cache hit key=item:68
+2026-03-02T10:06:11 WARNING db connection pool at 90 percent
+2026-03-02T10:06:15 INFO api GET /items/495 200 1645ms
+2026-03-02T10:06:53 WARNING db connection pool at 90 percent
+2026-03-02T10:07:07 INFO search query ok results=798
+2026-03-02T10:07:14 INFO api GET /items/238 200 1193ms
+2026-03-02T10:07:35 INFO billing invoice 426 created
+2026-03-02T10:07:49 INFO billing invoice 462 created
+2026-03-02T10:08:25 INFO billing invoice 900 created
+2026-03-02T10:08:27 WARNING api slow response 187ms for GET /search
+2026-03-02T10:09:07 INFO search query ok results=640
+2026-03-02T10:09:09 INFO api POST /orders 201 1070ms
+2026-03-02T10:09:18 INFO cache hit key=item:730
+2026-03-02T10:09:28 ERROR billing payment gateway timeout
+2026-03-02T10:10:01 INFO search query ok results=143
+2026-03-02T10:10:11 WARNING api slow response 2134ms for GET /search
+2026-03-02T10:10:28 WARNING cache miss key=item:454
+2026-03-02T10:10:51 WARNING cache miss key=item:240
+2026-03-02T10:11:01 ERROR billing payment gateway timeout
+2026-03-02T10:11:32 INFO billing invoice 133 created
+2026-03-02T10:12:07 DEBUG api POST /orders 201 1438ms
+2026-03-02T10:12:12 INFO api POST /orders 201 437ms
+2026-03-02T10:12:14 INFO api POST /orders 201 268ms
+2026-03-02T10:12:31 INFO auth login ok user=u116
+2026-03-02T10:12:35 INFO api POST /orders 201 2257ms
+2026-03-02T10:13:02 INFO search query ok results=829
+2026-03-02T10:13:25 WARNING api slow response 1374ms for GET /search
+2026-03-02T10:13:26 INFO api GET /items/584 200 1452ms
+2026-03-02T10:14:04 WARNING db connection pool at 90 percent
+2026-03-02T10:14:09 ERROR auth invalid token for user=u113
+2026-03-02T10:14:47 INFO search query ok results=153
+
+2026-03-02T10:15:27 ERROR db connection refused to postgres:5432
+2026-03-02T10:16:05 DEBUG api POST /orders 201 1557ms
+2026-03-02T10:16:07 INFO search query ok results=512
+2026-03-02T10:16:46 INFO auth login ok user=u111
+2026-03-02T10:16:58 ERROR db connection refused to postgres:5432
+2026-03-02T10:17:38 WARNING cache miss key=item:791
+2026-03-02T10:17:43 INFO billing invoice 459 created
+2026-03-02T10:18:02 WARNING api slow response 979ms for GET /search
+####### restart #######
+2026-03-02T10:18:27 INFO cache hit key=item:87
+2026-03-02T10:18:38 WARNING db connection pool at 90 percent
+2026-03-02T10:19:18 DEBUG cache hit key=item:209
+2026-03-02T10:19:46 INFO api POST /orders 201 153ms
+2026-03-02T10:20:00 WARNING cache miss key=item:698
+2026-03-02T10:20:06 INFO api GET /items/534 200 15ms
+2026-03-02T10:20:32 INFO api GET /items/31 200 1182ms
+2026-03-02T10:20:36 DEBUG api GET /items/114 200 721ms
+2026-03-02T10:20:37 INFO api GET /items/310 200 2329ms
+2026-03-02T10:21:05 INFO auth login ok user=u131
+2026-03-02T10:21:44 WARNING db connection pool at 90 percent
+2026-03-02T10:22:21 WARNING cache miss key=item:763
+2026-03-02T10:22:53 INFO search query ok results=426
+2026-03-02T10:23:07 INFO auth login ok user=u134
+2026-03-02T10:23:29 INFO api GET /items/673 200 1322ms
+2026-03-02T10:23:46 INFO cache hit key=item:358
+2026-03-02T10:23:57 INFO cache hit key=item:335
+2026-03-02T10:24:02 INFO billing invoice 73 created
+2026-03-02T10:24:27 INFO cache hit key=item:171
+2026-03-02T10:24:51 INFO api GET /items/566 200 1723ms
+2026-03-02T10:24:56 INFO api POST /orders 201 822ms
+2026-03-02T10:25:12 INFO api GET /items/631 200 721ms
+2026-03-02T10:25:49 INFO api POST /orders 201 232ms
+2026-03-02T10:26:13 DEBUG api GET /items/480 200 2289ms
+2026-03-02T10:26:31 DEBUG search query ok results=731
+2026-03-02T10:27:04 DEBUG cache hit key=item:481
+2026-03-02T10:27:16 INFO api GET /items/237 200 501ms
+2026-03-02T10:27:53 INFO api GET /items/752 200 322ms
+2026-03-02T10:28:23 INFO search query ok results=831
+2026-03-02T10:28:33 INFO auth login ok user=u108
+2026-03-02T10:28:41 INFO api GET /items/239 200 1627ms
+2026-03-02T10:28:54 INFO cache hit key=item:657
+2026-03-02T10:28:58 WARNING cache miss key=item:10
+2026-03-02T10:29:25 INFO search query ok results=376
+2026-03-02T10:29:38 INFO auth login ok user=u104
+2026-03-02T10:30:10 INFO api POST /orders 201 654ms
+2026-03-02T10:30:33 INFO billing invoice 623 created
+2026-03-02T10:30:41 INFO search query ok results=818
+2026-03-02T10:31:02 DEBUG billing invoice 626 created
+2026-03-02T10:31:13 ERROR auth invalid token for user=u125
+2026-03-02T10:31:30 INFO api POST /orders 201 330ms
+2026-03-02T10:32:05 INFO auth login ok user=u133
+2026-03-02T10:32:27 DEBUG auth login ok user=u120
+2026-03-02T10:32:39 INFO auth login ok user=u124
+2026-03-02T10:32:59 INFO cache hit key=item:91
+2026-03-02T10:33:27 INFO auth login ok user=u124
+2026-03-02T10:33:41 INFO auth login ok user=u104
+2026-03-02T10:34:18 INFO api POST /orders 201 475ms
+2026-03-02T10:34:43 DEBUG search query ok results=433
+2026-03-02T10:34:46 INFO search query ok results=171
+2026-03-02T10:35:20 ERROR db connection refused to postgres:5432
+2026-03-02T10:35:30 WARNING api slow response 63ms for GET /search
+2026-03-02T10:35:32 DEBUG api GET /items/69 200 886ms
+2026-03-02T10:35:46 ERROR billing payment gateway timeout
+2026-03-02T10:36:21 ERROR auth invalid token for user=u116
+2026-03-02T10:36:36 INFO api GET /items/261 200 750ms
+2026-03-02T10:37:12 WARNING db connection pool at 90 percent
+2026-03-02T10:37:50 INFO auth login ok user=u107
+2026-03-02T10:38:16 INFO search query ok results=772
+2026-03-02T10:38:30 INFO auth login ok user=u126
+2026-03-02T10:38:48 WARNING api slow response 1418ms for GET /search
+2026-03-02T10:39:27 INFO api POST /orders 201 375ms
+2026-03-02T10:39:49 WARNING cache miss key=item:31
