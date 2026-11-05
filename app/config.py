@@ -36,6 +36,11 @@ class Settings(BaseSettings):
     llm_api_key: SecretStr = SecretStr("")
     llm_timeout_seconds: float = 30.0
 
+    # --- parcels REST API
+    parcels_api_base_url: str = "http://127.0.0.1:9000"
+    parcels_api_timeout_seconds: float = 10.0
+    parcels_api_max_attempts: int = 4
+
     @property
     def docs_enabled(self) -> bool:
         """Interactive API docs only in development (ARC-09)."""
