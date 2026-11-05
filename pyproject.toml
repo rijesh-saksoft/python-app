@@ -54,7 +54,7 @@ select = ["E", "F", "W", "I", "N", "UP", "B", "S", "C4", "C90", "SIM", "PT", "PT
 max-complexity = 10        # keep functions small (PY-14)
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**" = ["S101"]      # assert is how pytest checks things
+"tests/**" = ["S101", "S311"]  # assert is how pytest checks things; seeded random keeps tests repeatable
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
