@@ -1,0 +1,6 @@
+Your previous answer could not be used.
+
+{errors}
+
+Answer again with one corrected JSON object that follows the rules and keys from the first
+message. Answer with the JSON object only.

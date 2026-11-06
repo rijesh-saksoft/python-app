@@ -1,0 +1,22 @@
+{
+  "name": "Goran Grove",
+  "email": "goran.grove@example.com",
+  "phone": "+00 555 286 2483",
+  "location": "Bengaluru",
+  "years_experience": 1,
+  "skills": ["Testing", "Git", "SQL", "AWS basics", "Linux"],
+  "jobs": [
+    {
+      "title": "Software Engineer",
+      "company": "Larkfield Labs",
+      "start_year": 2024,
+      "end_year": 2025
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc Statistics",
+      "graduation_year": 2024
+    }
+  ]
+}

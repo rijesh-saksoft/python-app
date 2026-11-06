@@ -1,0 +1,1019 @@
+{
+  "model": "qwen3.5:2b",
+  "prompt_version": "cv_extract/v1",
+  "runs": [
+    {
+      "cv_id": "cv_01",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Asha Alder",
+        "email": "asha.alder@example.com",
+        "phone": "+00 555 588 8287",
+        "location": "Kochi",
+        "years_experience": 1,
+        "skills": [
+          "JavaScript",
+          "SQL",
+          "Git",
+          "AWS basics",
+          "Java",
+          "Power BI",
+          "Linux"
+        ],
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Stonebridge Software",
+            "start_year": 2024,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2022
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 17.701908541144803,
+      "prompt_tokens": 507,
+      "completion_tokens": 207
+    },
+    {
+      "cv_id": "cv_02",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Bram Brook",
+        "email": "bram.brook@example.com",
+        "phone": "+00 555 274 1814",
+        "location": "Mumbai",
+        "years_experience": 3,
+        "skills": [
+          "SQL",
+          "AWS basics",
+          "JavaScript",
+          "Power BI"
+        ],
+        "jobs": [
+          {
+            "title": "QA Engineer",
+            "company": "Pinewood Digital",
+            "start_year": 2022,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "MCA",
+            "graduation_year": 2020
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 13.884000834077597,
+      "prompt_tokens": 498,
+      "completion_tokens": 191
+    },
+    {
+      "cv_id": "cv_03",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Chen Cole",
+        "email": "chen.cole@example.com",
+        "phone": "+00 555 148 2290",
+        "location": "Bengaluru",
+        "years_experience": 5,
+        "skills": [
+          "Python",
+          "JavaScript",
+          "AWS basics",
+          "PostgreSQL"
+        ],
+        "jobs": [
+          {
+            "title": "Data Analyst",
+            "company": "Stonebridge Software",
+            "start_year": 2024,
+            "end_year": 2025
+          },
+          {
+            "title": "Backend Developer",
+            "company": "Quillfeather Data",
+            "start_year": 2020,
+            "end_year": 2024
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2018
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 14.78218787489459,
+      "prompt_tokens": 520,
+      "completion_tokens": 242
+    },
+    {
+      "cv_id": "cv_04",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Dara Dunn",
+        "email": "dara.dunn@example.com",
+        "phone": "+00 555 658 9225",
+        "location": "Chennai",
+        "years_experience": 7,
+        "skills": [
+          "JavaScript",
+          "Excel",
+          "Testing",
+          "Jira",
+          "PostgreSQL",
+          "Power BI",
+          "AWS basics"
+        ],
+        "jobs": [
+          {
+            "title": "QA Engineer",
+            "company": "Copperleaf Services",
+            "start_year": 2022,
+            "end_year": 2025
+          },
+          {
+            "title": "Business Analyst",
+            "company": "Copperleaf Services",
+            "start_year": 2018,
+            "end_year": 2022
+          }
+        ],
+        "education": [
+          {
+            "degree": "M.Sc Statistics",
+            "graduation_year": 2018
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 16.157231416087598,
+      "prompt_tokens": 525,
+      "completion_tokens": 258
+    },
+    {
+      "cv_id": "cv_05",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Elio Ellis",
+        "email": "elio.ellis@example.com",
+        "phone": "+00 555 570 7880",
+        "location": "Chennai",
+        "years_experience": 7,
+        "skills": [
+          "FastAPI",
+          "Jira",
+          "SQL",
+          "Excel",
+          "Linux",
+          "Testing"
+        ],
+        "jobs": [
+          {
+            "title": "Business Analyst",
+            "company": "Alderbrook Systems",
+            "start_year": 2023,
+            "end_year": 2025
+          },
+          {
+            "title": "Support Engineer",
+            "company": "Stonebridge Software",
+            "start_year": 2021,
+            "end_year": 2023
+          },
+          {
+            "title": "Software Engineer",
+            "company": "Marlowe Finch Analytics",
+            "start_year": 2018,
+            "end_year": 2021
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2017
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 19.74525341601111,
+      "prompt_tokens": 546,
+      "completion_tokens": 299
+    },
+    {
+      "cv_id": "cv_06",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Farah Frost",
+        "email": "farah.frost@example.com",
+        "phone": "+00 555 369 8379",
+        "location": "Kochi",
+        "years_experience": 5,
+        "skills": [
+          "FastAPI",
+          "Python",
+          "Linux",
+          "Jira",
+          "Testing",
+          "PostgreSQL"
+        ],
+        "jobs": [
+          {
+            "title": "DevOps Engineer",
+            "company": "Harbourlight Tech",
+            "start_year": 2022,
+            "end_year": 2025
+          },
+          {
+            "title": "Backend Developer",
+            "company": "Harbourlight Tech",
+            "start_year": 2020,
+            "end_year": 2022
+          }
+        ],
+        "education": [
+          {
+            "degree": "BCA",
+            "graduation_year": 2018
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 14.465819500153884,
+      "prompt_tokens": 523,
+      "completion_tokens": 253
+    },
+    {
+      "cv_id": "cv_07",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Goran Grove",
+        "email": "goran.grove@example.com",
+        "phone": "+00 555 286 2483",
+        "location": "Bengaluru",
+        "years_experience": 1,
+        "skills": [
+          "Testing",
+          "Git",
+          "SQL",
+          "AWS basics",
+          "Linux"
+        ],
+        "jobs": [
+          {
+            "title": "Software Engineer",
+            "company": "Larkfield Labs",
+            "start_year": 2024,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "M.Sc Statistics",
+            "graduation_year": 2024
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 12.664793124888092,
+      "prompt_tokens": 502,
+      "completion_tokens": 198
+    },
+    {
+      "cv_id": "cv_08",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Hana Hale",
+        "email": "hana.hale@example.com",
+        "phone": "+00 555 281 5107",
+        "location": "Pune",
+        "years_experience": 6,
+        "skills": [
+          "Testing",
+          "Git",
+          "SQL",
+          "FastAPI",
+          "Excel",
+          "Linux"
+        ],
+        "jobs": [
+          {
+            "title": "Support Engineer",
+            "company": "Alderbrook Systems",
+            "start_year": 2023,
+            "end_year": 2025
+          },
+          {
+            "title": "Software Engineer",
+            "company": "Harbourlight Tech",
+            "start_year": 2019,
+            "end_year": 2023
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2018
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 15.361387541983277,
+      "prompt_tokens": 523,
+      "completion_tokens": 249
+    },
+    {
+      "cv_id": "cv_09",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Ivo Ivey",
+        "email": "ivo.ivey@example.com",
+        "phone": "+00 555 264 6765",
+        "location": "Pune",
+        "years_experience": 10,
+        "skills": [
+          "AWS basics",
+          "Testing",
+          "PostgreSQL",
+          "Python",
+          "SQL",
+          "Git",
+          "Java"
+        ],
+        "jobs": [
+          {
+            "title": "Support Engineer",
+            "company": "Alderbrook Systems",
+            "start_year": 2021,
+            "end_year": 2025
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Quillfeather Data",
+            "start_year": 2018,
+            "end_year": 2021
+          },
+          {
+            "title": "Business Analyst",
+            "company": "Larkfield Labs",
+            "start_year": 2015,
+            "end_year": 2018
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Tech Computer Science",
+            "graduation_year": 2014
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 17.419740458019078,
+      "prompt_tokens": 554,
+      "completion_tokens": 311
+    },
+    {
+      "cv_id": "cv_10",
+      "scored": true,
+      "model": "qwen3.5:2b",
+      "fields": {
+        "name": true,
+        "email": true,
+        "phone": true,
+        "location": true,
+        "years_experience": true,
+        "skills": true,
+        "jobs": true,
+        "education": true
+      },
+      "profile": {
+        "name": "Jun Joyce",
+        "email": "jun.joyce@example.com",
+        "phone": "+00 555 578 2521",
+        "location": "Bengaluru",
+        "years_experience": 11,
+        "skills": [
+          "FastAPI",
+          "Testing",
+          "Linux",
+          "Docker",
+          "Jira"
+        ],
+        "jobs": [
+          {
+            "title": "Support Engineer",
+            "company": "Alderbrook Systems",
+            "start_year": 2021,
+            "end_year": 2025
+          },
+          {
+            "title": "QA Engineer",
+            "company": "Harbourlight Tech",
+            "start_year": 2017,
+            "end_year": 2021
+          },
+          {
+            "title": "Backend Developer",
+            "company": "Pinewood Digital",
+            "start_year": 2014,
+            "end_year": 2017
+          }
+        ],
+        "education": [
+          {
+            "degree": "MCA",
+            "graduation_year": 2013
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 17.349181458121166,
+      "prompt_tokens": 542,
+      "completion_tokens": 296
+    },
+    {
+      "cv_id": "cv_11",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Kaya Kent",
+        "email": "kaya.kent@example.com",
+        "phone": "+00 555 183 7237",
+        "location": "Mumbai",
+        "years_experience": 1,
+        "skills": [
+          "Linux",
+          "SQL",
+          "AWS basics",
+          "Jira",
+          "JavaScript",
+          "Git"
+        ],
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Stonebridge Software",
+            "start_year": 2024,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "M.Sc Statistics",
+            "graduation_year": 2022
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 10.734111500205472,
+      "prompt_tokens": 502,
+      "completion_tokens": 201
+    },
+    {
+      "cv_id": "cv_12",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Lars Lowe",
+        "email": "lars.lowe@example.com",
+        "phone": "+00 555 154 8198",
+        "location": "Delhi",
+        "years_experience": 4,
+        "skills": [
+          "JavaScript",
+          "PostgreSQL",
+          "Docker",
+          "Java",
+          "FastAPI",
+          "Testing"
+        ],
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Pinewood Digital",
+            "start_year": 2024,
+            "end_year": 2025
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Larkfield Labs",
+            "start_year": 2021,
+            "end_year": 2024
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2019
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 12.564811874879524,
+      "prompt_tokens": 524,
+      "completion_tokens": 252
+    },
+    {
+      "cv_id": "cv_13",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Mira Marsh",
+        "email": "mira.marsh@example.com",
+        "phone": "+00 555 668 8324",
+        "location": "Kochi",
+        "years_experience": 2,
+        "skills": [
+          "Docker",
+          "SQL",
+          "Excel",
+          "Python"
+        ],
+        "jobs": [
+          {
+            "title": "DevOps Engineer",
+            "company": "Larkfield Labs",
+            "start_year": 2023,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Tech Computer Science",
+            "graduation_year": 2021
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 9.922142915893346,
+      "prompt_tokens": 502,
+      "completion_tokens": 194
+    },
+    {
+      "cv_id": "cv_14",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Noor Nash",
+        "email": "noor.nash@example.com",
+        "phone": "+00 555 809 2311",
+        "location": "Kochi",
+        "years_experience": 2,
+        "skills": [
+          "Jira",
+          "Python",
+          "Git",
+          "Java",
+          "Power BI"
+        ],
+        "jobs": [
+          {
+            "title": "DevOps Engineer",
+            "company": "Larkfield Labs",
+            "start_year": 2023,
+            "end_year": 2025
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.E. Electronics",
+            "graduation_year": 2022
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 9.951712541049346,
+      "prompt_tokens": 505,
+      "completion_tokens": 200
+    },
+    {
+      "cv_id": "cv_15",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Oren Orr",
+        "email": "oren.orr@example.com",
+        "phone": "+00 555 533 2987",
+        "location": "Chennai",
+        "years_experience": 9,
+        "skills": [
+          "Docker",
+          "Python",
+          "Excel",
+          "Java"
+        ],
+        "jobs": [
+          {
+            "title": "Support Engineer",
+            "company": "Copperleaf Services",
+            "start_year": 2021,
+            "end_year": 2025
+          },
+          {
+            "title": "Backend Developer",
+            "company": "Marlowe Finch Analytics",
+            "start_year": 2019,
+            "end_year": 2021
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Quillfeather Data",
+            "start_year": 2016,
+            "end_year": 2019
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.E. Electronics",
+            "graduation_year": 2016
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 19.947920457925647,
+      "prompt_tokens": 544,
+      "completion_tokens": 292
+    },
+    {
+      "cv_id": "cv_16",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Pia Penn",
+        "email": "pia.penn@example.com",
+        "phone": "+00 555 569 7390",
+        "location": "Bengaluru",
+        "years_experience": 6,
+        "skills": [
+          "Java",
+          "JavaScript",
+          "Jira",
+          "AWS basics",
+          "Git",
+          "SQL"
+        ],
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Quillfeather Data",
+            "start_year": 2022,
+            "end_year": 2025
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Quillfeather Data",
+            "start_year": 2020,
+            "end_year": 2022
+          },
+          {
+            "title": "QA Engineer",
+            "company": "Harbourlight Tech",
+            "start_year": 2019,
+            "end_year": 2020
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Tech Computer Science",
+            "graduation_year": 2019
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 18.0955556249246,
+      "prompt_tokens": 550,
+      "completion_tokens": 306
+    },
+    {
+      "cv_id": "cv_17",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Quin Quill",
+        "email": "quin.quill@example.com",
+        "phone": "+00 555 966 4099",
+        "location": "Kochi",
+        "years_experience": 8,
+        "skills": [
+          "JavaScript",
+          "AWS basics",
+          "Linux",
+          "Excel",
+          "Testing"
+        ],
+        "jobs": [
+          {
+            "title": "Support Engineer",
+            "company": "Pinewood Digital",
+            "start_year": 2023,
+            "end_year": 2025
+          },
+          {
+            "title": "Software Engineer",
+            "company": "Copperleaf Services",
+            "start_year": 2019,
+            "end_year": 2023
+          },
+          {
+            "title": "Software Engineer",
+            "company": "Quillfeather Data",
+            "start_year": 2017,
+            "end_year": 2019
+          }
+        ],
+        "education": [
+          {
+            "degree": "B.Sc Mathematics",
+            "graduation_year": 2017
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 16.30838012485765,
+      "prompt_tokens": 543,
+      "completion_tokens": 295
+    },
+    {
+      "cv_id": "cv_18",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Rhea Reed",
+        "email": "rhea.reed@example.com",
+        "phone": "+00 555 435 2352",
+        "location": "Chennai",
+        "years_experience": 2,
+        "skills": [
+          "Linux",
+          "Power BI",
+          "Java",
+          "JavaScript",
+          "Python",
+          "PostgreSQL"
+        ],
+        "jobs": [
+          {
+            "title": "Business Analyst",
+            "company": "Alderbrook Systems",
+            "start_year": 2024,
+            "end_year": 2025
+          },
+          {
+            "title": "Data Analyst",
+            "company": "Larkfield Labs",
+            "start_year": 2023,
+            "end_year": 2024
+          }
+        ],
+        "education": [
+          {
+            "degree": "BCA",
+            "graduation_year": 2023
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 12.409421083983034,
+      "prompt_tokens": 522,
+      "completion_tokens": 250
+    },
+    {
+      "cv_id": "cv_19",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Sven Shaw",
+        "email": "sven.shaw@example.com",
+        "phone": "+00 555 326 5814",
+        "location": "Mumbai",
+        "years_experience": 10,
+        "skills": [
+          "SQL",
+          "JavaScript",
+          "Jira",
+          "Linux",
+          "Java",
+          "Python",
+          "FastAPI"
+        ],
+        "jobs": [
+          {
+            "title": "Software Engineer",
+            "company": "Larkfield Labs",
+            "start_year": 2021,
+            "end_year": 2025
+          },
+          {
+            "title": "Software Engineer",
+            "company": "Stonebridge Software",
+            "start_year": 2018,
+            "end_year": 2021
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "Harbourlight Tech",
+            "start_year": 2015,
+            "end_year": 2018
+          }
+        ],
+        "education": [
+          {
+            "degree": "BCA",
+            "graduation_year": 2015
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 16.22195625002496,
+      "prompt_tokens": 546,
+      "completion_tokens": 305
+    },
+    {
+      "cv_id": "cv_20",
+      "scored": false,
+      "model": "qwen3.5:2b",
+      "fields": null,
+      "profile": {
+        "name": "Tala Thorn",
+        "email": "tala.thorn@example.com",
+        "phone": "+00 555 746 4645",
+        "location": "Kochi",
+        "years_experience": 3,
+        "skills": [
+          "PostgreSQL",
+          "Docker",
+          "Linux",
+          "FastAPI",
+          "SQL"
+        ],
+        "jobs": [
+          {
+            "title": "Backend Developer",
+            "company": "Harbourlight Tech",
+            "start_year": 2024,
+            "end_year": 2025
+          },
+          {
+            "title": "Business Analyst",
+            "company": "Larkfield Labs",
+            "start_year": 2023,
+            "end_year": 2024
+          },
+          {
+            "title": "Support Engineer",
+            "company": "Pinewood Digital",
+            "start_year": 2022,
+            "end_year": 2023
+          }
+        ],
+        "education": [
+          {
+            "degree": "BCA",
+            "graduation_year": 2022
+          }
+        ]
+      },
+      "error": null,
+      "repaired": false,
+      "latency_seconds": 17.73434158298187,
+      "prompt_tokens": 541,
+      "completion_tokens": 295
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Elio Ellis",
+  "email": "elio.ellis@example.com",
+  "phone": "+00 555 570 7880",
+  "location": "Chennai",
+  "years_experience": 7,
+  "skills": ["FastAPI", "Jira", "SQL", "Excel", "Linux", "Testing"],
+  "jobs": [
+    {
+      "title": "Business Analyst",
+      "company": "Alderbrook Systems",
+      "start_year": 2023,
+      "end_year": 2025
+    },
+    {
+      "title": "Support Engineer",
+      "company": "Stonebridge Software",
+      "start_year": 2021,
+      "end_year": 2023
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Marlowe Finch Analytics",
+      "start_year": 2018,
+      "end_year": 2021
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc Mathematics",
+      "graduation_year": 2017
+    }
+  ]
+}
