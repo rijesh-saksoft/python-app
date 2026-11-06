@@ -35,6 +35,11 @@ class Settings(BaseSettings):
     llm_model: str = ""
     llm_api_key: SecretStr = SecretStr("")
     llm_timeout_seconds: float = 30.0
+    llm_fallback_models: list[str] = []  # tried in order when the main model is unavailable
+    llm_max_attempts: int = 3  # per model, including the first try
+    llm_max_output_tokens: int = 1024
+    llm_temperature: float = 0.0  # 0 for extraction: the same input should give the same output
+    llm_reasoning_effort: str = ""  # empty sends nothing; "none" stops thinking models thinking
 
     # --- parcels REST API
     parcels_api_base_url: str = "http://127.0.0.1:9000"

@@ -2,9 +2,6 @@ import logging
 import random
 import time
 from collections.abc import Callable, Iterator, Mapping
-from dataclasses import dataclass
-from datetime import UTC, datetime
-from email.utils import parsedate_to_datetime
 from types import TracebackType
 from typing import Self
 
@@ -13,10 +10,9 @@ from pydantic import BaseModel, ValidationError
 
 from app.config import Settings
 from app.models.parcels import ApiMeta, OffsetPage, Record
+from app.services.http_retry import RetryPolicy, send_with_retries
 
 logger = logging.getLogger(__name__)
-
-TOO_MANY_REQUESTS = 429
 
 
 class ApiClientError(Exception):
@@ -35,37 +31,6 @@ class ApiStatusError(ApiClientError):
 
 class ApiResponseError(ApiClientError):
     """The server answered, but not with the shape we expect."""
-
-
-@dataclass(frozen=True, slots=True)
-class RetryPolicy:
-    max_attempts: int = 4
-    base_delay: float = 0.5
-    max_delay: float = 30.0
-
-    def backoff(self, attempt: int, rng: random.Random) -> float:
-        """Full jitter: a random wait between 0 and the capped exponential delay."""
-        return rng.uniform(0, min(self.max_delay, self.base_delay * 2**attempt))
-
-
-def _is_retryable(status_code: int) -> bool:
-    return status_code == TOO_MANY_REQUESTS or status_code >= 500
-
-
-def _retry_after_seconds(response: httpx.Response) -> float | None:
-    """Read Retry-After, which is either a number of seconds or an HTTP date."""
-    value = response.headers.get("Retry-After")
-    if value is None:
-        return None
-    try:
-        return max(float(value), 0.0)
-    except ValueError:
-        pass
-    try:
-        when = parsedate_to_datetime(value)
-    except TypeError, ValueError:
-        return None
-    return max((when - datetime.now(UTC)).total_seconds(), 0.0)
 
 
 class ApiClient:
@@ -148,33 +113,19 @@ class ApiClient:
     def _send(
         self, method: str, path: str, params: Mapping[str, int | str] | None
     ) -> httpx.Response:
-        for attempt in range(self._retry.max_attempts):
-            last_attempt = attempt == self._retry.max_attempts - 1
-            try:
-                response = self._http.request(method, path, params=params)
-            except httpx.TransportError as exc:
-                if last_attempt:
-                    raise ApiConnectionError(f"{method} {path} failed: {exc!r}") from exc
-                self._wait(attempt, None, f"{type(exc).__name__}", path)
-                continue
-            if response.is_success:
-                return response
-            if last_attempt or not _is_retryable(response.status_code):
-                raise ApiStatusError(method, path, response.status_code)
-            if not self._wait(attempt, response, f"HTTP {response.status_code}", path):
-                raise ApiStatusError(method, path, response.status_code)
-        raise AssertionError("unreachable: the loop returns or raises")  # pragma: no cover
-
-    def _wait(self, attempt: int, response: httpx.Response | None, reason: str, path: str) -> bool:
-        """Sleep before the next try. Return False when the server asks for too long a wait."""
-        retry_after = _retry_after_seconds(response) if response is not None else None
-        if retry_after is not None and retry_after > self._retry.max_delay:
-            logger.warning("%s on %s: Retry-After %.0fs is too long", reason, path, retry_after)
-            return False
-        delay = retry_after if retry_after is not None else self._retry.backoff(attempt, self._rng)
-        logger.warning("%s on %s, retry %d in %.2fs", reason, path, attempt + 1, delay)
-        self._sleep(delay)
-        return True
+        try:
+            response = send_with_retries(
+                lambda: self._http.request(method, path, params=params),
+                policy=self._retry,
+                sleep=self._sleep,
+                rng=self._rng,
+                label=f"{method} {path}",
+            )
+        except httpx.TransportError as exc:
+            raise ApiConnectionError(f"{method} {path} failed: {exc!r}") from exc
+        if not response.is_success:
+            raise ApiStatusError(method, path, response.status_code)
+        return response
 
     @staticmethod
     def _validate[M: BaseModel](model: type[M], data: object, where: str) -> M:

@@ -1,0 +1,28 @@
+{
+  "name": "Chen Cole",
+  "email": "chen.cole@example.com",
+  "phone": "+00 555 148 2290",
+  "location": "Bengaluru",
+  "years_experience": 5,
+  "skills": ["Python", "JavaScript", "AWS basics", "PostgreSQL"],
+  "jobs": [
+    {
+      "title": "Data Analyst",
+      "company": "Stonebridge Software",
+      "start_year": 2024,
+      "end_year": 2025
+    },
+    {
+      "title": "Backend Developer",
+      "company": "Quillfeather Data",
+      "start_year": 2020,
+      "end_year": 2024
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc Mathematics",
+      "graduation_year": 2018
+    }
+  ]
+}

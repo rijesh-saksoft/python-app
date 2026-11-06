@@ -1,0 +1,28 @@
+{
+  "name": "Farah Frost",
+  "email": "farah.frost@example.com",
+  "phone": "+00 555 369 8379",
+  "location": "Kochi",
+  "years_experience": 5,
+  "skills": ["FastAPI", "Python", "Linux", "Jira", "Testing", "PostgreSQL"],
+  "jobs": [
+    {
+      "title": "DevOps Engineer",
+      "company": "Harbourlight Tech",
+      "start_year": 2022,
+      "end_year": 2025
+    },
+    {
+      "title": "Backend Developer",
+      "company": "Harbourlight Tech",
+      "start_year": 2020,
+      "end_year": 2022
+    }
+  ],
+  "education": [
+    {
+      "degree": "BCA",
+      "graduation_year": 2018
+    }
+  ]
+}
