@@ -29,12 +29,18 @@ class Settings(BaseSettings):
     postgres_db: str = "example"
     postgres_user: str = "app_user"
     postgres_password: SecretStr = SecretStr("")  # SecretStr hides the value if printed (CFG-09)
+    postgres_timeout_seconds: int = 5  # for connecting and for each statement
 
     # --- language model (provider-agnostic: switch provider by changing these three)
     llm_base_url: str = ""
     llm_model: str = ""
     llm_api_key: SecretStr = SecretStr("")
     llm_timeout_seconds: float = 30.0
+    llm_fallback_models: list[str] = []  # tried in order when the main model is unavailable
+    llm_max_attempts: int = 3  # per model, including the first try
+    llm_max_output_tokens: int = 1024
+    llm_temperature: float = 0.0  # 0 for extraction: the same input should give the same output
+    llm_reasoning_effort: str = ""  # empty sends nothing; "none" stops thinking models thinking
 
     # --- parcels REST API
     parcels_api_base_url: str = "http://127.0.0.1:9000"
