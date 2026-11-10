@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     postgres_db: str = "example"
     postgres_user: str = "app_user"
     postgres_password: SecretStr = SecretStr("")  # SecretStr hides the value if printed (CFG-09)
+    postgres_timeout_seconds: int = 5  # for connecting and for each statement
 
     # --- language model (provider-agnostic: switch provider by changing these three)
     llm_base_url: str = ""
