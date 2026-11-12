@@ -1,0 +1,11 @@
+{
+  "tracking_no": "PX00001234",
+  "recipient_name": "Test Person (invented)",
+  "status": "active",
+  "stops": [
+    {"hub": "North Hub", "event": "arrived", "occurred_at": "2026-01-05T08:15:00Z"},
+    {"hub": "North Hub", "event": "sorted", "occurred_at": "2026-01-05T09:02:00Z"},
+    {"hub": "Central Hub", "event": "exception", "occurred_at": "2026-01-06T14:40:00Z"}
+  ],
+  "promised_date": "2026-01-07"
+}

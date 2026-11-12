@@ -42,6 +42,14 @@ class Settings(BaseSettings):
     llm_temperature: float = 0.0  # 0 for extraction: the same input should give the same output
     llm_reasoning_effort: str = ""  # empty sends nothing; "none" stops thinking models thinking
 
+    # --- embeddings (one model: vectors from different models cannot be compared)
+    embedding_base_url: str = ""
+    embedding_model: str = ""
+    embedding_api_key: SecretStr = SecretStr("")
+    embedding_timeout_seconds: float = 30.0
+    embedding_query_prefix: str = ""  # some models expect a task prefix, e.g. "search_query: "
+    embedding_document_prefix: str = ""
+
     # --- parcels REST API
     parcels_api_base_url: str = "http://127.0.0.1:9000"
     parcels_api_timeout_seconds: float = 10.0

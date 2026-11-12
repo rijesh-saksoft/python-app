@@ -1,0 +1,160 @@
+[
+  {
+    "id": "q01",
+    "question": "How much can I spend on food each day when I stay two nights in another city for work?",
+    "expected_docs": [
+      "05_travel.md"
+    ],
+    "retrieved_docs": [
+      "05_travel.md",
+      "06_expenses.md",
+      "05_travel.md"
+    ],
+    "answer": "For trips with an overnight stay, you may spend up to 60 per day on meals, including any breakfast not included with the room, following the Business Travel Policy - Meals while travelling.",
+    "cited_docs": [
+      "05_travel.md"
+    ]
+  },
+  {
+    "id": "q02",
+    "question": "I have been ill for nine days. What paperwork do I need to hand in?",
+    "expected_docs": [
+      "02_sick_leave.md"
+    ],
+    "retrieved_docs": [
+      "02_sick_leave.md",
+      "02_sick_leave.md",
+      "02_sick_leave.md"
+    ],
+    "answer": "Since your absence is from the eighth calendar day, you must provide a doctor's note, as stated in the Sick Leave Policy - Evidence rule.",
+    "cited_docs": [
+      "02_sick_leave.md"
+    ]
+  },
+  {
+    "id": "q03",
+    "question": "I am a driver. Can I take two weeks off in the middle of December?",
+    "expected_docs": [
+      "01_annual_leave.md"
+    ],
+    "retrieved_docs": [
+      "01_annual_leave.md",
+      "16_vehicles_and_drivers.md",
+      "02_sick_leave.md"
+    ],
+    "answer": "As a delivery staff member, you cannot take two weeks off because between 15 November and 5 January you may take at most three consecutive days of leave, based on rule 1.",
+    "cited_docs": [
+      "01_annual_leave.md"
+    ]
+  },
+  {
+    "id": "q04",
+    "question": "What happens if I keep my work laptop after I resign?",
+    "expected_docs": [
+      "07_company_equipment.md"
+    ],
+    "retrieved_docs": [
+      "07_company_equipment.md",
+      "08_it_security.md",
+      "07_company_equipment.md"
+    ],
+    "answer": "I don't know. The available sources do not answer this question.",
+    "cited_docs": []
+  },
+  {
+    "id": "q05",
+    "question": "A supplier offered me concert tickets worth 120. May I keep them?",
+    "expected_docs": [
+      "13_gifts_anti_bribery.md"
+    ],
+    "retrieved_docs": [
+      "13_gifts_anti_bribery.md",
+      "06_expenses.md",
+      "13_gifts_anti_bribery.md"
+    ],
+    "answer": "You may not keep the concert tickets because they are worth more than 50; according to rule 1, anything worth more than 50 must be declined politely or handed to the compliance team if refusing would cause offence.",
+    "cited_docs": [
+      "13_gifts_anti_bribery.md"
+    ]
+  },
+  {
+    "id": "q06",
+    "question": "I clicked a link in a strange email and typed in my password. What should I do, and how quickly?",
+    "expected_docs": [
+      "11_incident_reporting.md"
+    ],
+    "retrieved_docs": [
+      "08_it_security.md",
+      "10_data_protection.md",
+      "20_site_access.md"
+    ],
+    "answer": "You should report it straight away as a security incident following the Incident Reporting Policy.",
+    "cited_docs": [
+      "08_it_security.md"
+    ]
+  },
+  {
+    "id": "q07",
+    "question": "How long do we keep the photos drivers take when they hand over a parcel?",
+    "expected_docs": [
+      "10_data_protection.md"
+    ],
+    "retrieved_docs": [
+      "10_data_protection.md",
+      "16_vehicles_and_drivers.md",
+      "15_health_and_safety.md"
+    ],
+    "answer": "Proof-of-delivery photos are kept for 90 days, according to the Data Protection Policy retention rules.",
+    "cited_docs": [
+      "10_data_protection.md"
+    ]
+  },
+  {
+    "id": "q08",
+    "question": "What extra pay do I get for working on a Sunday?",
+    "expected_docs": [
+      "17_overtime_and_shifts.md"
+    ],
+    "retrieved_docs": [
+      "17_overtime_and_shifts.md",
+      "04_remote_work.md",
+      "04_remote_work.md"
+    ],
+    "answer": "Overtime on Sundays is paid at 2 times the normal rate, according to the Overtime and Shift Policy. If you are office staff on salaries above the management threshold, you receive time off in lieu instead of overtime pay.",
+    "cited_docs": [
+      "17_overtime_and_shifts.md"
+    ]
+  },
+  {
+    "id": "q09",
+    "question": "Can I use a free online chatbot to tidy up a reply to a customer that includes their home address?",
+    "expected_docs": [
+      "09_acceptable_use.md"
+    ],
+    "retrieved_docs": [
+      "10_data_protection.md",
+      "09_acceptable_use.md",
+      "09_acceptable_use.md"
+    ],
+    "answer": "You must never paste customer addresses into any AI tool that is not on the approved list found on the intranet. Using rule Acceptable Use Policy - AI tools.",
+    "cited_docs": [
+      "09_acceptable_use.md"
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "The company paid 3,000 for my course. If I resign 18 months after finishing it, do I owe anything back?",
+    "expected_docs": [
+      "18_training_and_development.md"
+    ],
+    "retrieved_docs": [
+      "18_training_and_development.md",
+      "07_company_equipment.md",
+      "01_annual_leave.md"
+    ],
+    "answer": "Yes, using the rule from passage 1, since the company paid more than 2,000 for your course and you are leaving between 12 and 24 months (at 18 months) after finishing it, you must repay half of the cost.",
+    "cited_docs": [
+      "18_training_and_development.md"
+    ]
+  }
+]

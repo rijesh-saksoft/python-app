@@ -169,6 +169,18 @@ def test_missing_usage_is_reported_as_none() -> None:
     assert result.model == "model-a"
 
 
+@pytest.mark.parametrize("message", [{"role": "assistant"}, {"content": None}])
+def test_answer_cut_before_any_text_is_empty(message: dict[str, object]) -> None:
+    reply = {"choices": [{"message": message, "finish_reason": "length"}]}
+    handler, _ = sequence(httpx.Response(200, json=reply))
+
+    with make_client(handler) as client:
+        result = client.complete(MESSAGES)
+
+    assert result.text == ""
+    assert result.finish_reason == "length"
+
+
 def test_retries_5xx_then_succeeds() -> None:
     sleeps: list[float] = []
     handler, seen = sequence(httpx.Response(503), completion())

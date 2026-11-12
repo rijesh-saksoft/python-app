@@ -93,6 +93,11 @@ One document of about 10,200 tokens: `cv_01` (Asha Alder) first, `cv_02` to `cv_
   lost the first CV.
 - `num_ctx` cannot be set through the OpenAI-compatible `/v1` endpoint; it needs the native
   API or a model file.
+- Repeated later with `num_ctx` 16384: the 2B model returned the last CV's number for Asha
+  Alder and another CV's number (Bram Brook) for Tala Thorn. Both wrong, and a different
+  failure from the first run.
+- The same document and question on gemini-3.5-flash-lite (9,770 prompt tokens by its
+  tokenizer): both numbers right in 3 runs out of 3, about 13 s each.
 - Consequence for this service: send one CV per request, and keep the size limit in the
   extractor (`MAX_CV_CHARS`) so a long input is refused instead of silently half-read.
   Long documents need splitting and per-part extraction, not a bigger context.

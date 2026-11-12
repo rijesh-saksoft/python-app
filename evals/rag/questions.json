@@ -1,0 +1,52 @@
+[
+  {
+    "id": "q01",
+    "question": "How much can I spend on food each day when I stay two nights in another city for work?",
+    "expected_docs": ["05_travel.md"]
+  },
+  {
+    "id": "q02",
+    "question": "I have been ill for nine days. What paperwork do I need to hand in?",
+    "expected_docs": ["02_sick_leave.md"]
+  },
+  {
+    "id": "q03",
+    "question": "I am a driver. Can I take two weeks off in the middle of December?",
+    "expected_docs": ["01_annual_leave.md"]
+  },
+  {
+    "id": "q04",
+    "question": "What happens if I keep my work laptop after I resign?",
+    "expected_docs": ["07_company_equipment.md"]
+  },
+  {
+    "id": "q05",
+    "question": "A supplier offered me concert tickets worth 120. May I keep them?",
+    "expected_docs": ["13_gifts_anti_bribery.md"]
+  },
+  {
+    "id": "q06",
+    "question": "I clicked a link in a strange email and typed in my password. What should I do, and how quickly?",
+    "expected_docs": ["11_incident_reporting.md"]
+  },
+  {
+    "id": "q07",
+    "question": "How long do we keep the photos drivers take when they hand over a parcel?",
+    "expected_docs": ["10_data_protection.md"]
+  },
+  {
+    "id": "q08",
+    "question": "What extra pay do I get for working on a Sunday?",
+    "expected_docs": ["17_overtime_and_shifts.md"]
+  },
+  {
+    "id": "q09",
+    "question": "Can I use a free online chatbot to tidy up a reply to a customer that includes their home address?",
+    "expected_docs": ["09_acceptable_use.md"]
+  },
+  {
+    "id": "q10",
+    "question": "The company paid 3,000 for my course. If I resign 18 months after finishing it, do I owe anything back?",
+    "expected_docs": ["18_training_and_development.md"]
+  }
+]

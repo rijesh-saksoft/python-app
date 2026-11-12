@@ -1,8 +1,9 @@
 """The one module that calls language models (Playbook AI-01, AI-02).
 
-It speaks the OpenAI-compatible chat API, which hosted providers and Ollama both accept, so
-switching provider is a settings change. Each model gets retries for 5xx, 429 and network
-errors; when a model stays unavailable, the next model in the fallback list is tried.
+It speaks the OpenAI-compatible chat and embeddings APIs, which hosted providers and Ollama
+both accept, so switching provider is a settings change. Each model gets retries for 5xx,
+429 and network errors; when a chat model stays unavailable, the next model in the fallback
+list is tried.
 Errors in our own request (bad key, bad input) are not retried and do not fall back: every
 other model would reject them too. Prompts and replies are never logged: they can hold
 personal data.
@@ -17,7 +18,7 @@ from types import TracebackType
 from typing import Self
 
 import httpx
-from pydantic import BaseModel, Field, SecretStr, ValidationError
+from pydantic import BaseModel, Field, SecretStr, ValidationError, model_validator
 
 from app.config import Settings
 from app.services.http_retry import RetryPolicy, is_retryable, send_with_retries
@@ -84,18 +85,74 @@ class _Usage(BaseModel):
 
 
 class _ReplyMessage(BaseModel):
-    content: str
+    content: str | None = None
 
 
 class _Choice(BaseModel):
     message: _ReplyMessage
     finish_reason: str | None = None
 
+    @model_validator(mode="after")
+    def _text_missing_only_when_cut(self) -> Self:
+        # A reply cut before any text (thinking used max_tokens) has no content; any other
+        # reply without text is malformed.
+        if self.message.content is None and self.finish_reason != "length":
+            raise ValueError("reply has no text")
+        return self
+
 
 class _ChatReply(BaseModel):
     model: str | None = None
     choices: list[_Choice] = Field(min_length=1)
     usage: _Usage | None = None
+
+
+class _Embedding(BaseModel):
+    index: int = Field(ge=0)
+    embedding: list[float] = Field(min_length=1)
+
+
+class _EmbeddingReply(BaseModel):
+    data: list[_Embedding]
+
+
+def _http_client(
+    base_url: str, api_key: SecretStr, timeout: float, transport: httpx.BaseTransport | None
+) -> httpx.Client:
+    key = api_key.get_secret_value()
+    # Local servers such as Ollama need no key; never send an empty bearer token.
+    headers = {"Authorization": f"Bearer {key}"} if key else {}
+    return httpx.Client(
+        base_url=base_url, headers=headers, timeout=httpx.Timeout(timeout), transport=transport
+    )
+
+
+def _post(
+    http: httpx.Client,
+    path: str,
+    body: Mapping[str, object],
+    *,
+    model: str,
+    retry: RetryPolicy,
+    sleep: Callable[[float], None],
+    rng: random.Random,
+) -> httpx.Response:
+    """Send with retries, and turn every failure into one of this module's errors."""
+    try:
+        response = send_with_retries(
+            lambda: http.post(path, json=body),
+            policy=retry,
+            sleep=sleep,
+            rng=rng,
+            label=f"model {model}",
+        )
+    except httpx.TransportError as exc:
+        raise LlmUnavailableError(f"{type(exc).__name__}") from exc
+    if response.status_code == NOT_FOUND or is_retryable(response.status_code):
+        raise LlmUnavailableError(f"HTTP {response.status_code}")
+    if not response.is_success:
+        raise LlmRequestError(model, response.status_code)
+    return response
 
 
 class LlmClient:
@@ -114,15 +171,7 @@ class LlmClient:
         sleep: Callable[[float], None] = time.sleep,
         rng: random.Random | None = None,
     ) -> None:
-        key = api_key.get_secret_value()
-        # Local servers such as Ollama need no key; never send an empty bearer token.
-        headers = {"Authorization": f"Bearer {key}"} if key else {}
-        self._http = httpx.Client(
-            base_url=base_url,
-            headers=headers,
-            timeout=httpx.Timeout(timeout),
-            transport=transport,
-        )
+        self._http = _http_client(base_url, api_key, timeout, transport)
         self.models = tuple(models)
         self._max_output_tokens = max_output_tokens
         self._temperature = temperature
@@ -195,24 +244,18 @@ class LlmClient:
 
     def _complete_with(self, model: str, payload: Mapping[str, object]) -> Completion:
         started = time.perf_counter()
-        try:
-            response = send_with_retries(
-                lambda: self._http.post("chat/completions", json={**payload, "model": model}),
-                policy=self._retry,
-                sleep=self._sleep,
-                rng=self._rng,
-                label=f"model {model}",
-            )
-        except httpx.TransportError as exc:
-            raise LlmUnavailableError(f"{type(exc).__name__}") from exc
-        if response.status_code == NOT_FOUND or is_retryable(response.status_code):
-            raise LlmUnavailableError(f"HTTP {response.status_code}")
-        if not response.is_success:
-            raise LlmRequestError(model, response.status_code)
-
+        response = _post(
+            self._http,
+            "chat/completions",
+            {**payload, "model": model},
+            model=model,
+            retry=self._retry,
+            sleep=self._sleep,
+            rng=self._rng,
+        )
         reply = self._parse(response, model)
         completion = Completion(
-            text=reply.choices[0].message.content,
+            text=reply.choices[0].message.content or "",
             model=reply.model or model,
             usage=TokenUsage(reply.usage.prompt_tokens, reply.usage.completion_tokens)
             if reply.usage
@@ -244,3 +287,94 @@ class LlmClient:
         )
         if completion.finish_reason == "length":
             logger.warning("model %s stopped at max_tokens; the answer is cut", completion.model)
+
+
+class EmbeddingClient:
+    """Turns texts into vectors. One model and no fallback: vectors from another model live
+    in a different space and cannot be compared with the stored ones."""
+
+    def __init__(
+        self,
+        base_url: str,
+        *,
+        model: str,
+        api_key: SecretStr,
+        timeout: float,
+        batch_size: int = 32,
+        query_prefix: str = "",
+        document_prefix: str = "",
+        retry: RetryPolicy | None = None,
+        transport: httpx.BaseTransport | None = None,
+        sleep: Callable[[float], None] = time.sleep,
+        rng: random.Random | None = None,
+    ) -> None:
+        self._http = _http_client(base_url, api_key, timeout, transport)
+        self.model = model
+        self._batch_size = batch_size
+        self._query_prefix = query_prefix
+        self._document_prefix = document_prefix
+        self._retry = retry or RetryPolicy()
+        self._sleep = sleep
+        # Jitter only spreads retries out; it is not a security value.
+        self._rng = rng or random.Random()  # noqa: S311  # nosec B311
+
+    @classmethod
+    def from_settings(cls, settings: Settings) -> Self:
+        if not settings.embedding_base_url:
+            raise LlmConfigError("EMBEDDING_BASE_URL is not set")
+        if not settings.embedding_model:
+            raise LlmConfigError("EMBEDDING_MODEL is not set")
+        return cls(
+            settings.embedding_base_url,
+            model=settings.embedding_model,
+            api_key=settings.embedding_api_key,
+            timeout=settings.embedding_timeout_seconds,
+            query_prefix=settings.embedding_query_prefix,
+            document_prefix=settings.embedding_document_prefix,
+        )
+
+    def close(self) -> None:
+        self._http.close()
+
+    def __enter__(self) -> Self:
+        return self
+
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> None:
+        self.close()
+
+    def embed_documents(self, texts: Sequence[str]) -> list[list[float]]:
+        prefixed = [self._document_prefix + text for text in texts]
+        vectors: list[list[float]] = []
+        for start in range(0, len(prefixed), self._batch_size):
+            vectors += self._embed(prefixed[start : start + self._batch_size])
+        return vectors
+
+    def embed_query(self, text: str) -> list[float]:
+        return self._embed([self._query_prefix + text])[0]
+
+    def _embed(self, texts: list[str]) -> list[list[float]]:
+        response = _post(
+            self._http,
+            "embeddings",
+            {"model": self.model, "input": texts},
+            model=self.model,
+            retry=self._retry,
+            sleep=self._sleep,
+            rng=self._rng,
+        )
+        try:
+            reply = _EmbeddingReply.model_validate_json(response.content)
+        except ValidationError as exc:
+            raise LlmResponseError(f"model {self.model} sent an unexpected reply") from exc
+        # The API marks each vector with the position of its input; it need not keep order.
+        vectors = {item.index: item.embedding for item in reply.data}
+        if sorted(vectors) != list(range(len(texts))):
+            raise LlmResponseError(
+                f"model {self.model} returned {len(vectors)} vectors for {len(texts)} texts"
+            )
+        return [vectors[i] for i in range(len(texts))]
