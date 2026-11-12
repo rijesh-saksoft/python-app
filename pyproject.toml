@@ -25,6 +25,7 @@ dependencies = [
     "httpx",               # outbound HTTP calls (always set a timeout)
     "jinja2",              # HTML templates for the small web page
     "python-multipart",    # needed by FastAPI for HTML form posts
+    "psycopg[binary]==3.3.6",  # PostgreSQL driver (parameterised queries only)
 ]
 
 [dependency-groups]

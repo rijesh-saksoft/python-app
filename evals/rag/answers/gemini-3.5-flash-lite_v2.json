@@ -1,0 +1,170 @@
+[
+  {
+    "id": "q01",
+    "prompt": "grounded_answer/v2",
+    "question": "How much can I spend on food each day when I stay two nights in another city for work?",
+    "expected_docs": [
+      "05_travel.md"
+    ],
+    "retrieved_docs": [
+      "05_travel.md",
+      "06_expenses.md",
+      "05_travel.md"
+    ],
+    "answer": "According to the Business Travel Policy - Meals while travelling, you may spend up to 60 per day on meals on a trip with an overnight stay, including any breakfast not included with the room. Alcohol is not reimbursed.",
+    "cited_docs": [
+      "05_travel.md"
+    ]
+  },
+  {
+    "id": "q02",
+    "prompt": "grounded_answer/v2",
+    "question": "I have been ill for nine days. What paperwork do I need to hand in?",
+    "expected_docs": [
+      "02_sick_leave.md"
+    ],
+    "retrieved_docs": [
+      "02_sick_leave.md",
+      "02_sick_leave.md",
+      "02_sick_leave.md"
+    ],
+    "answer": "According to the Sick Leave Policy - Evidence, since your absence is nine days, which is from the eighth calendar day onwards, you must provide a doctor's note.",
+    "cited_docs": [
+      "02_sick_leave.md"
+    ]
+  },
+  {
+    "id": "q03",
+    "prompt": "grounded_answer/v2",
+    "question": "I am a driver. Can I take two weeks off in the middle of December?",
+    "expected_docs": [
+      "01_annual_leave.md"
+    ],
+    "retrieved_docs": [
+      "01_annual_leave.md",
+      "16_vehicles_and_drivers.md",
+      "02_sick_leave.md"
+    ],
+    "answer": "According to the Annual Leave Policy - Peak season, between 15 November and 5 January, delivery staff may take at most three consecutive days of leave. Therefore, you cannot take two weeks off during that period.",
+    "cited_docs": [
+      "01_annual_leave.md"
+    ]
+  },
+  {
+    "id": "q04",
+    "prompt": "grounded_answer/v2",
+    "question": "What happens if I keep my work laptop after I resign?",
+    "expected_docs": [
+      "07_company_equipment.md"
+    ],
+    "retrieved_docs": [
+      "07_company_equipment.md",
+      "08_it_security.md",
+      "07_company_equipment.md"
+    ],
+    "answer": "I don't know. The available sources do not answer this question.",
+    "cited_docs": []
+  },
+  {
+    "id": "q05",
+    "prompt": "grounded_answer/v2",
+    "question": "A supplier offered me concert tickets worth 120. May I keep them?",
+    "expected_docs": [
+      "13_gifts_anti_bribery.md"
+    ],
+    "retrieved_docs": [
+      "13_gifts_anti_bribery.md",
+      "06_expenses.md",
+      "13_gifts_anti_bribery.md"
+    ],
+    "answer": "No, because the tickets are worth more than 50. According to the Gifts and Anti-Bribery Policy - Gifts and hospitality you receive, gifts worth more than 50 must be declined or handed to the compliance team if refusing would cause offence.",
+    "cited_docs": [
+      "13_gifts_anti_bribery.md"
+    ]
+  },
+  {
+    "id": "q06",
+    "prompt": "grounded_answer/v2",
+    "question": "I clicked a link in a strange email and typed in my password. What should I do, and how quickly?",
+    "expected_docs": [
+      "11_incident_reporting.md"
+    ],
+    "retrieved_docs": [
+      "08_it_security.md",
+      "10_data_protection.md",
+      "20_site_access.md"
+    ],
+    "answer": "You should report it straight away as a security incident, as stated in the IT Security Policy - Phishing.",
+    "cited_docs": [
+      "08_it_security.md"
+    ]
+  },
+  {
+    "id": "q07",
+    "prompt": "grounded_answer/v2",
+    "question": "How long do we keep the photos drivers take when they hand over a parcel?",
+    "expected_docs": [
+      "10_data_protection.md"
+    ],
+    "retrieved_docs": [
+      "10_data_protection.md",
+      "16_vehicles_and_drivers.md",
+      "15_health_and_safety.md"
+    ],
+    "answer": "Proof-of-delivery photos are kept for 90 days, according to the Data Protection Policy - Retention.",
+    "cited_docs": [
+      "10_data_protection.md"
+    ]
+  },
+  {
+    "id": "q08",
+    "prompt": "grounded_answer/v2",
+    "question": "What extra pay do I get for working on a Sunday?",
+    "expected_docs": [
+      "17_overtime_and_shifts.md"
+    ],
+    "retrieved_docs": [
+      "17_overtime_and_shifts.md",
+      "04_remote_work.md",
+      "04_remote_work.md"
+    ],
+    "answer": "According to the Overtime and Shift Policy - Overtime, overtime on Sundays is paid at 2 times the normal rate. Note that office staff on salaries above the management threshold receive time off in lieu instead of overtime pay.",
+    "cited_docs": [
+      "17_overtime_and_shifts.md"
+    ]
+  },
+  {
+    "id": "q09",
+    "prompt": "grounded_answer/v2",
+    "question": "Can I use a free online chatbot to tidy up a reply to a customer that includes their home address?",
+    "expected_docs": [
+      "09_acceptable_use.md"
+    ],
+    "retrieved_docs": [
+      "10_data_protection.md",
+      "09_acceptable_use.md",
+      "09_acceptable_use.md"
+    ],
+    "answer": "According to the Acceptable Use Policy - AI tools, you must never paste customer addresses or other personal data into any AI tool that is not on the approved list maintained by IT on the intranet.",
+    "cited_docs": [
+      "09_acceptable_use.md"
+    ]
+  },
+  {
+    "id": "q10",
+    "prompt": "grounded_answer/v2",
+    "question": "The company paid 3,000 for my course. If I resign 18 months after finishing it, do I owe anything back?",
+    "expected_docs": [
+      "18_training_and_development.md"
+    ],
+    "retrieved_docs": [
+      "18_training_and_development.md",
+      "07_company_equipment.md",
+      "01_annual_leave.md"
+    ],
+    "answer": "According to the Training and Development Policy - Repaying fees, if you leave between 12 and 24 months after finishing a qualification that cost more than 2,000, you must repay half of the cost.",
+    "cited_docs": [
+      "18_training_and_development.md"
+    ]
+  }
+]

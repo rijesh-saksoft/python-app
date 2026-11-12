@@ -1,0 +1,443 @@
+[
+  {
+    "strategy": "fixed_size",
+    "chunk_count": 65,
+    "average_chars": 449.87692307692305,
+    "results": [
+      {
+        "id": "q01",
+        "expected_docs": [
+          "05_travel.md"
+        ],
+        "top_docs": [
+          "05_travel.md",
+          "06_expenses.md",
+          "05_travel.md",
+          "05_travel.md",
+          "06_expenses.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q02",
+        "expected_docs": [
+          "02_sick_leave.md"
+        ],
+        "top_docs": [
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "05_travel.md",
+          "14_whistleblowing.md",
+          "01_annual_leave.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q03",
+        "expected_docs": [
+          "01_annual_leave.md"
+        ],
+        "top_docs": [
+          "01_annual_leave.md",
+          "01_annual_leave.md",
+          "03_parental_leave.md",
+          "02_sick_leave.md",
+          "16_vehicles_and_drivers.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q04",
+        "expected_docs": [
+          "07_company_equipment.md"
+        ],
+        "top_docs": [
+          "07_company_equipment.md",
+          "07_company_equipment.md",
+          "07_company_equipment.md",
+          "08_it_security.md",
+          "04_remote_work.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q05",
+        "expected_docs": [
+          "13_gifts_anti_bribery.md"
+        ],
+        "top_docs": [
+          "06_expenses.md",
+          "13_gifts_anti_bribery.md",
+          "05_travel.md",
+          "07_company_equipment.md",
+          "05_travel.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q06",
+        "expected_docs": [
+          "11_incident_reporting.md"
+        ],
+        "top_docs": [
+          "08_it_security.md",
+          "10_data_protection.md",
+          "08_it_security.md",
+          "11_incident_reporting.md",
+          "08_it_security.md"
+        ],
+        "rank": 4
+      },
+      {
+        "id": "q07",
+        "expected_docs": [
+          "10_data_protection.md"
+        ],
+        "top_docs": [
+          "10_data_protection.md",
+          "10_data_protection.md",
+          "07_company_equipment.md",
+          "16_vehicles_and_drivers.md",
+          "16_vehicles_and_drivers.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q08",
+        "expected_docs": [
+          "17_overtime_and_shifts.md"
+        ],
+        "top_docs": [
+          "17_overtime_and_shifts.md",
+          "17_overtime_and_shifts.md",
+          "04_remote_work.md",
+          "02_sick_leave.md",
+          "02_sick_leave.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q09",
+        "expected_docs": [
+          "09_acceptable_use.md"
+        ],
+        "top_docs": [
+          "10_data_protection.md",
+          "09_acceptable_use.md",
+          "08_it_security.md",
+          "09_acceptable_use.md",
+          "07_company_equipment.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q10",
+        "expected_docs": [
+          "18_training_and_development.md"
+        ],
+        "top_docs": [
+          "18_training_and_development.md",
+          "07_company_equipment.md",
+          "03_parental_leave.md",
+          "18_training_and_development.md",
+          "02_sick_leave.md"
+        ],
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "strategy": "by_section",
+    "chunk_count": 118,
+    "average_chars": 226.16101694915255,
+    "results": [
+      {
+        "id": "q01",
+        "expected_docs": [
+          "05_travel.md"
+        ],
+        "top_docs": [
+          "05_travel.md",
+          "06_expenses.md",
+          "05_travel.md",
+          "04_remote_work.md",
+          "05_travel.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q02",
+        "expected_docs": [
+          "02_sick_leave.md"
+        ],
+        "top_docs": [
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "02_sick_leave.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q03",
+        "expected_docs": [
+          "01_annual_leave.md"
+        ],
+        "top_docs": [
+          "01_annual_leave.md",
+          "01_annual_leave.md",
+          "01_annual_leave.md",
+          "02_sick_leave.md",
+          "04_remote_work.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q04",
+        "expected_docs": [
+          "07_company_equipment.md"
+        ],
+        "top_docs": [
+          "07_company_equipment.md",
+          "07_company_equipment.md",
+          "09_acceptable_use.md",
+          "04_remote_work.md",
+          "07_company_equipment.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q05",
+        "expected_docs": [
+          "13_gifts_anti_bribery.md"
+        ],
+        "top_docs": [
+          "06_expenses.md",
+          "13_gifts_anti_bribery.md",
+          "05_travel.md",
+          "07_company_equipment.md",
+          "05_travel.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q06",
+        "expected_docs": [
+          "11_incident_reporting.md"
+        ],
+        "top_docs": [
+          "08_it_security.md",
+          "10_data_protection.md",
+          "08_it_security.md",
+          "11_incident_reporting.md",
+          "20_site_access.md"
+        ],
+        "rank": 4
+      },
+      {
+        "id": "q07",
+        "expected_docs": [
+          "10_data_protection.md"
+        ],
+        "top_docs": [
+          "10_data_protection.md",
+          "16_vehicles_and_drivers.md",
+          "15_health_and_safety.md",
+          "16_vehicles_and_drivers.md",
+          "16_vehicles_and_drivers.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q08",
+        "expected_docs": [
+          "17_overtime_and_shifts.md"
+        ],
+        "top_docs": [
+          "17_overtime_and_shifts.md",
+          "04_remote_work.md",
+          "17_overtime_and_shifts.md",
+          "01_annual_leave.md",
+          "17_overtime_and_shifts.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q09",
+        "expected_docs": [
+          "09_acceptable_use.md"
+        ],
+        "top_docs": [
+          "10_data_protection.md",
+          "09_acceptable_use.md",
+          "09_acceptable_use.md",
+          "09_acceptable_use.md",
+          "12_code_of_conduct.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q10",
+        "expected_docs": [
+          "18_training_and_development.md"
+        ],
+        "top_docs": [
+          "18_training_and_development.md",
+          "07_company_equipment.md",
+          "01_annual_leave.md",
+          "03_parental_leave.md",
+          "01_annual_leave.md"
+        ],
+        "rank": 1
+      }
+    ]
+  },
+  {
+    "strategy": "by_sentences",
+    "chunk_count": 93,
+    "average_chars": 239.19354838709677,
+    "results": [
+      {
+        "id": "q01",
+        "expected_docs": [
+          "05_travel.md"
+        ],
+        "top_docs": [
+          "05_travel.md",
+          "06_expenses.md",
+          "04_remote_work.md",
+          "05_travel.md",
+          "16_vehicles_and_drivers.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q02",
+        "expected_docs": [
+          "02_sick_leave.md"
+        ],
+        "top_docs": [
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "02_sick_leave.md",
+          "01_annual_leave.md",
+          "05_travel.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q03",
+        "expected_docs": [
+          "01_annual_leave.md"
+        ],
+        "top_docs": [
+          "03_parental_leave.md",
+          "01_annual_leave.md",
+          "16_vehicles_and_drivers.md",
+          "03_parental_leave.md",
+          "01_annual_leave.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q04",
+        "expected_docs": [
+          "07_company_equipment.md"
+        ],
+        "top_docs": [
+          "07_company_equipment.md",
+          "07_company_equipment.md",
+          "01_annual_leave.md",
+          "08_it_security.md",
+          "04_remote_work.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q05",
+        "expected_docs": [
+          "13_gifts_anti_bribery.md"
+        ],
+        "top_docs": [
+          "06_expenses.md",
+          "13_gifts_anti_bribery.md",
+          "05_travel.md",
+          "05_travel.md",
+          "13_gifts_anti_bribery.md"
+        ],
+        "rank": 2
+      },
+      {
+        "id": "q06",
+        "expected_docs": [
+          "11_incident_reporting.md"
+        ],
+        "top_docs": [
+          "08_it_security.md",
+          "10_data_protection.md",
+          "08_it_security.md",
+          "11_incident_reporting.md",
+          "08_it_security.md"
+        ],
+        "rank": 4
+      },
+      {
+        "id": "q07",
+        "expected_docs": [
+          "10_data_protection.md"
+        ],
+        "top_docs": [
+          "10_data_protection.md",
+          "07_company_equipment.md",
+          "10_data_protection.md",
+          "10_data_protection.md",
+          "16_vehicles_and_drivers.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q08",
+        "expected_docs": [
+          "17_overtime_and_shifts.md"
+        ],
+        "top_docs": [
+          "17_overtime_and_shifts.md",
+          "17_overtime_and_shifts.md",
+          "17_overtime_and_shifts.md",
+          "02_sick_leave.md",
+          "01_annual_leave.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q09",
+        "expected_docs": [
+          "09_acceptable_use.md"
+        ],
+        "top_docs": [
+          "09_acceptable_use.md",
+          "14_whistleblowing.md",
+          "09_acceptable_use.md",
+          "10_data_protection.md",
+          "09_acceptable_use.md"
+        ],
+        "rank": 1
+      },
+      {
+        "id": "q10",
+        "expected_docs": [
+          "18_training_and_development.md"
+        ],
+        "top_docs": [
+          "18_training_and_development.md",
+          "01_annual_leave.md",
+          "03_parental_leave.md",
+          "01_annual_leave.md",
+          "07_company_equipment.md"
+        ],
+        "rank": 1
+      }
+    ]
+  }
+]
